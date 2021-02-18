@@ -16,8 +16,9 @@ body {
 
 img.knives {
 	position: absolute;
-	top: 50px;
-	left: -15px;
+	width: 300px;
+	top: 150px;
+	left: 0px;
 	transform: skewY(-8deg);
 }
 
@@ -67,15 +68,29 @@ img.knives {
 	box-shadow: 20px 20px 50px 2px #CD9589;
 }
 
+/*need to figure this out!*/
+.card1:hover{
+	transform: scale(1.05);
+}
 
 .card2{
 	transform: translateY(-8%);
 	box-shadow: 20px 20px 50px 2px #CD9589;
 }
 
+.card2:hover{
+	transform: scale(1.05);
+}
+
 
 .card3{
 	box-shadow: 20px 20px 50px 2px #CD9589;
 }
+
+.card3:hover{
+	transform: scale(1.05);
+}
+
+
 
 

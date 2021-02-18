@@ -28,7 +28,7 @@ img.knives {
 	left: 0px;
 	width: 100%;
 	margin: 0vmax 0vmax;
-	z-index: -1;
+	z-index: -2;
 }
 
 
@@ -50,6 +50,7 @@ img.knives {
 	transform: skewY(4deg);
 }
 
+
 .container .card .cardside {
 	position: absolute;
 	top: 0;
@@ -68,7 +69,7 @@ img.knives {
 	box-shadow: 20px 20px 50px 2px #CD9589;
 }
 
-/*need to figure this out!*/
+
 .card1:hover{
 	transform: scale(1.05);
 }
@@ -92,5 +93,32 @@ img.knives {
 }
 
 
+.recipe1{
+	position: absolute;
+	top: 1000px;
+	width: 60%;
+	background-color: #DA9B98;
+	padding: 20px;
+	font-family: "SF Compact";
+}
+
+.recipe2{
+	position: absolute;
+	top: 2000px;
+	width: 60%;
+	background-color: #DA9B98;
+	padding: 20px;
+	font-family: "SF Compact";
+}
+
+
+.recipe3{
+	position: absolute;
+	top: 3000px;
+	width: 60%;
+	background-color: #DA9B98;
+	padding: 20px;
+	font-family: "SF Compact";
+}
 
 

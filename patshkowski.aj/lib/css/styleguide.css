@@ -7,13 +7,13 @@
 :root {
 	--color-neutral-light:#f6f6f6;
 	--color-neutral-medium:#c5c5c5;
-	--color-neutral-dark:#000; /* there are plugins you can get to help with colors in sublime text */
+	--color-neutral-dark:#313131; /* there are plugins you can get to help with colors in sublime text */
 
 	--color-white:#fff;
 	--color-black:#111;
 
 
-	--header-heigh:3rem; /* rem=root em is always relative to the root element (useful for paddings, borders, and margins, etc.); ems are always relative to the parent and can change */
+	--header-height:3rem; /* rem=root em is always relative to the root element (useful for paddings, borders, and margins, etc.); ems are always relative to the parent and can change (elements that are outside of the root elements) */
 
 
 	--font-sans: Helvetica, Arial, sans-serif;
@@ -60,16 +60,18 @@ a:hover {
 
 .hidden{ display:none; }
 
-.display-flex { display:flex; }
-.display-block {display:block;}
+/* Don't ever want to edit when they are listed on a single line */
+.display-flex { display:flex; /*  */}
+.display-block { display:block; }
 .display-inline-flex { display:inline-flex; }
 .display-inline-block { display:inline-block; }
 
-.flex-stretch { flex: 1 1 auto; } /* will all grow and shrink at same rate, based on height width of */
-.flex-none { flex: none; } /* doesn't stretch, but still part of a flex parent */
+/* flex child classes */
+.flex-stretch { flex: 1 1 auto; } /* will all grow and shrink at same rate, based on original width of the element */
+.flex-none { flex: none; } /* the element itself doesn't stretch, but still part of a flexing parent */
 
-.flex-align-center { align-items:center; }
-.flex-justify-center { justify-content:center; }
+.flex-align-center { align-items:center; } /* will go across the flexing axis - right/left? */
+.flex-justify-center { justify-content:center; } /* will go along the flexing axis - up/down? */
 
 
 
@@ -92,7 +94,7 @@ a:hover {
 
 .nav ul,
 .navbar ul {
-	list-style-type:none;
+	list-style-type:none; /* gets rid of the bullet points */
 	margin:0;
 	padding-left:0;
 }
@@ -108,14 +110,14 @@ a:hover {
 /* VIEW WINDOW -useful for showing a big image on page with content in the middle */
 
 .view-window {
-	position:relative; /* allows to position absolutely, children inside of this */
+	position:relative; /* allows to position absolutely the children inside of this */
 	overflow:hidden; /* allows to animate out of and into it's space, but not affect it's size */
 
 	background-size:cover;
 	background-position:center;
-	background-attachment: fixed; /* the view window itself doesn't have a background image in it */
+	background-attachment:fixed; /* the view window itself doesn't have a background image in it */
 
-	height:70vh;
+	height:70vh; /* vh=viewport height - a value of 1vh is equal to 1% of the viewport height; vw=viewport width; vmax=viewport maximum; vmin=viewport minimum */
 }
 
 
@@ -130,7 +132,7 @@ a:hover {
 	margin-bottom:1em;
 	margin-top:1em;
 
-	position:relative;
+	position:relative; /* things can be positioned inside of it */
 	overflow:hidden; /*things can be animated out of it and animated back into it */
 }
 
@@ -139,7 +141,7 @@ a:hover {
 
 .card.soft {
 	border-radius:0.5em;
-	box-shadow:0 0 10px rgba(0,0,0,0.1); /* type 0 0 0 black then inspect the card */
+	box-shadow:3px 4px 10px 3px rgb(0, 0, 0, .08); /* type 0 0 0 black then inspect the card */
 }
 
 .card.hard {
@@ -149,13 +151,16 @@ a:hover {
 
 .card.dark {
 	background-color:var(--color-neutral-dark);
-	color:var(--color-neutral-white);
+	color:var(--color-white);
+}
+
+.card.medium {
+	background-color:var(--color-neutral-medium);
 }
 
 .card.flat {
 	padding:0;
 }
-
 
 
 

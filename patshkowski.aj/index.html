@@ -14,22 +14,29 @@
 	<!-- To COMMENT : cmd + / -->
 
 	<!-- header>h1+p -->
-	<header>
-		<div class="container">
-			<h1>Awesome website</h1>
+	<header class="navbar">
+		<div class="container display-flex flex-align-center">
+			<div class="flex-none">
+				<h1>Awesome website</h1>
+			</div>
+
+
+			<div class="flex-stretch"></div>
+			
+			<!-- nav.nav>ul>li*4>a[href=#article$]>{Link $} -->
+
+			<nav class="nav flex-none">
+				<ul class="display-flex">
+					<li><a href="#article1">Link 1</a></li>
+					<li><a href="#article2">Link 2</a></li>
+					<li><a href="#article3">Link 3</a></li>
+					<li><a href="#article4">Link 4</a></li>
+				</ul>
+			</nav>
+
 	</header>
 
 
-	<!-- nav.nav>ul>li*4>a[href=#article$]>{Link $} -->
-
-	<nav class="nav container">
-		<ul>
-			<li><a href="#article1">Link 1</a></li>
-			<li><a href="#article2">Link 2</a></li>
-			<li><a href="#article3">Link 3</a></li>
-			<li><a href="#article4">Link 4</a></li>
-		</ul>
-	</nav>
 
 
 	<!-- .container>article#article$.article*4>h2{Article $}+div.article-body>p*4>lorem40 -->
@@ -44,12 +51,14 @@
 				<p>Animi expedita sapiente labore, cupiditate ullam, quos assumenda, dolorum rerum suscipit eveniet modi autem ipsam ea dignissimos tempore. Quod officia sint quibusdam corrupti, temporibus non nisi natus earum doloribus odio voluptatum, porro nostrum magni ipsa maiores officiis alias cupiditate libero.</p>
 			</div>
 		</article>
+	</div>
 
-		<div class="view-window" style="background-image:url(some kind of mountain)">
-			<h2>PRODUCT</h2>
+		<div class="view-window display-flex flex-align-center flex-justify-center" style="background-image:url(https://images.pexels.com/photos/174523/pexels-photo-174523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+			<h2 class="card soft dark">PRODUCT</h2>
 		</div>
 
-		<article id="article2" class="article card soft">
+	<div class="container">	
+		<article id="article2" class="article card">
 			<h2>Article 2</h2>
 			<div class="article-body">
 				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis delectus odit corporis voluptates neque molestias amet cumque, dolorum quidem sint voluptate suscipit asperiores enim, nemo quod architecto quam adipisci, ab. Excepturi, adipisci laudantium, eligendi optio iusto incidunt quaerat atque tempore!</p>
@@ -58,7 +67,7 @@
 				<p>Voluptas deleniti eveniet, adipisci sunt hic deserunt accusantium, facere autem voluptate vero, id, fugiat illum expedita. Quae explicabo ad, velit ducimus tempora dolorem provident veritatis nam totam excepturi perspiciatis placeat eos incidunt illo ut, alias unde beatae, maxime veniam aliquid.</p>
 			</div>
 		</article>
-		<article id="article3" class="article card soft">
+		<article id="article3" class="article card hard">
 			<h2>Article 3</h2>
 			<div class="article-body">
 				<p>Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Vel, tempora? Corrupti asperiores nostrum atque aliquid alias. Perspiciatis veritatis repellendus maxime assumenda, labore, itaque doloribus, sed, ipsum earum at esse saepe amet neque similique aliquid cupiditate iusto quaerat fugit dignissimos cumque.</p>
@@ -67,7 +76,7 @@
 				<p>Dolorem aliquam quidem maiores veniam corrupti ea, recusandae tempore praesentium cupiditate voluptate veritatis pariatur, deserunt dolores necessitatibus. Ad facilis accusamus magnam, provident deserunt nulla soluta, rem molestias, voluptatibus aperiam similique, ducimus? Obcaecati, autem, totam. Perspiciatis, ipsum cumque fugiat! Minus, suscipit?</p>
 			</div>
 		</article>
-		<article id="article4" class="article card soft">
+		<article id="article4" class="article card dark">
 			<h2>Article 4</h2>
 			<div class="article-body">
 				<p>Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Quibusdam ullam nesciunt eveniet aliquid libero quasi aperiam necessitatibus. Optio blanditiis reprehenderit autem est iste ab dolorum hic iure! Cum provident unde tempora! At aspernatur quia exercitationem officiis debitis officia illum aperiam.</p>
@@ -76,6 +85,25 @@
 				<p>Quibusdam eius, eos delectus earum. Veritatis, obcaecati recusandae dolor officiis accusamus iure blanditiis mollitia quae, tempore perspiciatis similique consequatur in cumque quidem dolores? Soluta, rem saepe ut accusamus sequi qui repellendus excepturi veritatis rerum quaerat consequuntur? Veritatis ab amet consequatur.</p>
 			</div>
 		</article>
+		<article id="article4" class="article card medium">
+			<h2>Article 4</h2>
+			<div class="article-body">
+				<p>Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Quibusdam ullam nesciunt eveniet aliquid libero quasi aperiam necessitatibus. Optio blanditiis reprehenderit autem est iste ab dolorum hic iure! Cum provident unde tempora! At aspernatur quia exercitationem officiis debitis officia illum aperiam.</p>
+				<p>Officia maiores corporis eveniet eius autem quos. Id temporibus molestias tempora fugiat, amet alias eaque? Eaque ipsa provident voluptas exercitationem quae, adipisci impedit doloribus sunt debitis similique ad ex perferendis molestiae omnis beatae fugit error perspiciatis consequatur! Eaque, laudantium, mollitia.</p>
+				<p>Nisi sed, quis. Voluptatum ipsam, adipisci suscipit praesentium, accusantium nostrum numquam voluptatem id exercitationem, molestiae quia minima incidunt officiis minus doloribus. Quaerat labore, aspernatur? Nulla, alias explicabo reprehenderit porro, magnam odit, quisquam error tenetur excepturi, exercitationem eligendi laboriosam ex quibusdam!</p>
+				<p>Quibusdam eius, eos delectus earum. Veritatis, obcaecati recusandae dolor officiis accusamus iure blanditiis mollitia quae, tempore perspiciatis similique consequatur in cumque quidem dolores? Soluta, rem saepe ut accusamus sequi qui repellendus excepturi veritatis rerum quaerat consequuntur? Veritatis ab amet consequatur.</p>
+			</div>
+		</article>
+		<article id="article4" class="article card flat">
+			<h2>Article 4</h2>
+			<div class="article-body">
+				<p>Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Quibusdam ullam nesciunt eveniet aliquid libero quasi aperiam necessitatibus. Optio blanditiis reprehenderit autem est iste ab dolorum hic iure! Cum provident unde tempora! At aspernatur quia exercitationem officiis debitis officia illum aperiam.</p>
+				<p>Officia maiores corporis eveniet eius autem quos. Id temporibus molestias tempora fugiat, amet alias eaque? Eaque ipsa provident voluptas exercitationem quae, adipisci impedit doloribus sunt debitis similique ad ex perferendis molestiae omnis beatae fugit error perspiciatis consequatur! Eaque, laudantium, mollitia.</p>
+				<p>Nisi sed, quis. Voluptatum ipsam, adipisci suscipit praesentium, accusantium nostrum numquam voluptatem id exercitationem, molestiae quia minima incidunt officiis minus doloribus. Quaerat labore, aspernatur? Nulla, alias explicabo reprehenderit porro, magnam odit, quisquam error tenetur excepturi, exercitationem eligendi laboriosam ex quibusdam!</p>
+				<p>Quibusdam eius, eos delectus earum. Veritatis, obcaecati recusandae dolor officiis accusamus iure blanditiis mollitia quae, tempore perspiciatis similique consequatur in cumque quidem dolores? Soluta, rem saepe ut accusamus sequi qui repellendus excepturi veritatis rerum quaerat consequuntur? Veritatis ab amet consequatur.</p>
+			</div>
+		</article>
+
 	</div>
 
 

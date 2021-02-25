@@ -61,7 +61,7 @@ a:hover {
 .hidden{ display:none; }
 
 /* Don't ever want to edit when they are listed on a single line */
-.display-flex { display:flex; /*  */}
+.display-flex { display:flex; }
 .display-block { display:block; }
 .display-inline-flex { display:inline-flex; }
 .display-inline-block { display:inline-block; }

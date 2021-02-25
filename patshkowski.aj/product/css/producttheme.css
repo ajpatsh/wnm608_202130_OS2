@@ -1,1 +1,16 @@
-producttheme.css
+
+
+.main {
+	padding: 2em;
+}
+
+
+.card.title {
+	font-size:3em;
+	font-weight:bold;
+}
+
+.card.features li {
+	list-style-type:none;
+}
+

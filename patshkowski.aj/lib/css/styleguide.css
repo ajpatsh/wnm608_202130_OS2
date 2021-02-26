@@ -175,6 +175,18 @@ a:hover {
 
 }
 
+.card>:first-child { margin-top:0; }
+.card>:last-child {margin-bottom:0;}
+
+
+
+/* WELL - shows layout but doesn't have content */
+.well {
+	background-color:var(--color-neutral-medium);
+	padding:0.5em;
+	border-radius:0.2em;
+}
+
 
 
 

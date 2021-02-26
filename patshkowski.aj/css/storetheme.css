@@ -9,5 +9,9 @@ body {
 	background-color:var(--color-neutral-light);
 }
 
-
+@media (max-width:500px) {
+	:root {
+		--header-height:2rem;
+	}
+}
 

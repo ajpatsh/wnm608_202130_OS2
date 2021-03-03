@@ -7,6 +7,7 @@
 
 	<link rel="stylesheet" href="lib/css/styleguide.css">
 	<link rel="stylesheet" href="css/storetheme.css">
+	<link rel="stylesheet" href="lib/css/gridsystem.css">
 </head>
 <body>
 	
@@ -27,18 +28,32 @@
 <body>
 
 
-<div class="container main display-flex flex-align-center">
-	<div class="container">
-		<h1>This is the most interesting landing page you've ever seen! (Make-believe)</h1>
+<div class="grid">
+	<div class="col-8">
+		<div class="container main display-flex flex-align-center">
+			<div class="container">
+				<h1>This is the most interesting landing page you've ever seen! (Make-believe)</h1>
 
-		<h4 class="display-inline-flex">Supporting text about how awesome the product on this landing page is and how much it will solve all of your problems and make your life so much easier.</h4>
+				<h4 class="display-inline-flex">Supporting text about how awesome the product on this landing page is and how much it will solve all of your problems and make your life so much easier.</h4>
 
-		<div class="button dark round display-inline-flex">Call To Action</div>
+			<div class="button dark round display-inline-flex">Call To Action</div>
 	</div>
-
-	<img class="display-flex" src="http://via.placeholder.com/300">
+</div>
 
 </div>
+
+
+	<div class="col-4">
+		<img class="display-flex" src="http://via.placeholder.com/300">
+	</div>
+</div>
+
+
+<div class="view-window display-flex flex-align-center flex-justify-center" style="background-image:url(https://images.pexels.com/photos/174523/pexels-photo-174523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+			<h2 class="card soft dark"><a href="http://ajpatshkowski.com/aau/wnm608/patshkowski.aj/product/index.html">PRODUCT</a></h2>
+</div>
+
+
 
 
 
@@ -52,24 +67,36 @@
 
 
 
-<div class="container cards">
 
-	<div class="card features">
-		<div class="title"><h2>Feature 1</h2></div>
-		<div class="image"><img src="https://via.placeholder.com/100"></div>
-		<div class="details">
-			<ul>
-				<li>Text</li>
-				<li>Text</li>
-				<li>Text</li>
-				<li>Text</li>
-			</ul>
+
+
+
+
+
+
+<div class="grid">
+	<div class="col-4">
+		<div class="container cards">
+			<div class="card features">
+				<div class="title"><h2>Feature 1</h2></div>
+				<div class="image"><img src="https://via.placeholder.com/100"></div>
+				<div class="details">
+					<ul>
+						<li>Text</li>
+						<li>Text</li>
+						<li>Text</li>
+						<li>Text</li>
+					</ul>
+				</div>
+
+				<a href="#" class="button round">Learn More</a>
+			</div>
+
 		</div>
-
-		<a href="#" class="button round">Learn More</a>
 	</div>
+	<div class="col-4">
 
-	<div class="card features">
+		<div class="card features">
 		<div class="title"><h2>Feature 2</h2></div>
 		<div class="image"><img src="https://via.placeholder.com/100"></div>
 		<div class="details">
@@ -84,7 +111,10 @@
 		<a href="#" class="button round">Learn More</a>
 	</div>
 
-	<div class="card features">
+	</div>
+	<div class="col-4">
+		
+		<div class="card features">
 		<div class="title"><h2>Feature 3</h2></div>
 		<div class="image"><img src="https://via.placeholder.com/100"></div>
 		<div class="details">
@@ -99,7 +129,14 @@
 		<a href="#" class="button round">Learn More</a>
 	</div>
 
+
+	</div>
 </div>
+
+
+
+
+
 
 
 

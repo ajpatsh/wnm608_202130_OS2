@@ -1,9 +1,49 @@
+
 :root {
-	--color-neutral-light:#f6f6f6;
-	--color-neutral-medium:#c5c5c5;
-	--color-neutral-dark:#313131; 
+	--color-neutral-light:#e9c288;
+	--color-neutral-medium:#f27b6e;
+	--color-neutral-dark:#56354c;
 }
 
+.main {
+	padding: 2em;
+}
+
+h1 {
+	color:var(--color-neutral-medium);
+}
+
+
+.card.title {
+	font-size:3em;
+	font-weight:bold;
+}
+
+.card.features li {
+	list-style-type:none;
+}
+
+.card.features ul {
+	align-items:center;
+	vertical-align: center;
+}
+
+.container.benefits {
+	padding:2em;
+}
+
+.button.round {
+	background-color:var(--color-neutral-medium);
+}
+
+footer {
+	background-color:var(--color-neutral-dark);
+	min-height:2em;
+	color:var(--color-white);
+	text-align:center;
+	margin:0 auto;
+	justify-content: center;
+}
 
 body {
 	background-color:var(--color-neutral-light);

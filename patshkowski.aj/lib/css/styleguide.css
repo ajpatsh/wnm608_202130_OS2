@@ -104,13 +104,31 @@ a:hover {
 	padding:0 0.5em;
 }
 
+.nav a {
+	display:block; /* block elements take up full width of their parent elements */
+}
+
+.nav a hover {
+	background-color:var(--color-neutral-medium);
+	color:var(--color-white);
+	text-decoration: none;
+}
+
+.nav.flex ul,
+.nav.stretch ul {
+	display:flex;
+}
+
+.nav.stretch li {
+	flex:1 1 auto;
+	text-align:center;
+}
 
 
-
-/* VIEW WINDOW -useful for showing a big image on page with content in the middle */
+ VIEW WINDOW -useful for showing a big image on page with content in the middle 
 
 .view-window {
-	position:relative; /* allows to position absolutely the children inside of this */
+	position:relative; /* allows to position absolutely the children inside of this 
 	overflow:hidden; /* allows to animate out of and into it's space, but not affect it's size */
 
 	background-size:cover;
@@ -175,6 +193,10 @@ a:hover {
 
 }
 
+.card.rainbow {
+	background-image: linear-gradient(130deg, #ff00a2, blue, #00ff99, #ebff00);
+}
+
 .card>:first-child { margin-top:0; }
 .card>:last-child {margin-bottom:0;}
 
@@ -219,4 +241,11 @@ a:hover {
 	background-color:var(--color-black);
 	color:var(--color-white);
 	padding:1em;
+}
+
+
+/* Media Image */
+.media-image {
+	max-width:100%;
+	vertical-align: middle;
 }

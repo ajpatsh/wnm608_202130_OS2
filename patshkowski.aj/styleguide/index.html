@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="lib/css/styleguide.css">
 	<link rel="stylesheet" href="lib/css/gridsystem.css">
-	<link rel="stylesheet" href="css/storetheme.css">
+	
 </head>
 
 <body>
@@ -34,6 +34,8 @@
          <ul class="nav toc">
             <li><a href="styleguide/#typography">Typography</a></li>
             <li><a href="styleguide/#color">Color</a></li>
+            <li><a href="styleguide/#borders">Borders</a></li>
+            <li><a href="styleguide/#buttons">Buttons</a></li>
             <li><a href="styleguide/#grid">Grid</a></li>
             <li><a href="styleguide/#card">Card</a></li>
             <li><a href="styleguide/#navigations">Navigations</a></li>
@@ -85,7 +87,7 @@
       </div>
    </div>
 
-   <div class="container" id="card">
+   <div class="container" id="color">
       <div class="card soft">
          <h2>Color</h2>
 
@@ -94,6 +96,128 @@
          <div style="background-color:var(--color-neutral-dark)">Color Neutral Dark</div>
       </div>
    </div>
+
+   <div class="container" id="borders">
+      <div class="card soft">
+         <h2>Borders</h2>
+
+         <div class="border">
+         	<p>Border</p>
+         </div>
+
+         <div class="border-bottom">
+         	<p>Bottom border</p>
+         </div>
+
+         <div class="border-left">
+         	<p>Left border</p>
+         </div>
+
+         <div class="border-right">
+         	<p>Right border</p>
+         </div>
+
+         <div class="border-top">
+         	<p>Top border</p>
+         </div>
+
+         <div class="topbar">
+         	<p>Thick top border</p>
+         </div>
+
+         <div class="leftbar">
+         	<p>Thick left border</p>
+         </div>
+
+         <div class="rightbar">
+         	<p>Thick right border</p>
+         </div>
+
+         <div class="bottombar">
+         	<p>Thick bottom border</p>
+         </div>
+
+         <div class="border dark">
+         	<p>Dark border</p>
+         </div>
+
+         <div class="border border-hover">
+         	<p>Border with hover effect</p>
+         </div>
+
+         <div class="border round-small">
+         	<p>Barely rounded corners</p>
+         </div>
+
+         <div class="border round">
+         	<p>Rounded corners</p>
+         </div>
+
+         <div class="border round-large">
+         	<p>Rounder corners</p>
+         </div>
+
+         <div class="border round-xlarge">
+         	<p>Rounderer corners</p>
+         </div>
+
+         <div class="border round-xxlarge">
+         	<p>Rounderest corners</p>
+         </div>
+
+         <div class="border circle">
+         	<p>Straight up circle</p>
+         </div>
+
+      </div>
+   </div>
+
+
+
+
+
+   <div class="container" id="buttons">
+      <div class="card soft">
+         <h2>Buttons</h2>
+         <div class="section">
+	         <button class="button">Button</button>
+	         <button class="button dark">Dark Button</button>
+	         <button class="button medium">Medium Button</button>
+	         <button class="button light">Light Button</button>
+         </div>
+         <div class="section">
+	         <button class="btn">Hover Button</button>
+	         <button class="btn button dark">Hover Dk Button</button>
+	         <button class="btn button medium">Hover Md Button</button>
+	         <button class="btn button light">Hover Lt Button</button>
+	         <button class="btn button round">Hover Round Button</button>
+	     </div>
+	     <div class="section">
+	         <button class="button round">Round</button>
+	         <button class="button round-large">Rounder</button>
+	         <button class="button round-xlarge">Rounderer</button>
+	         <button class="button round-xxlarge">Rounderest</button>
+	         <button class="button large circle xlarge">+</button>
+	     </div>
+	     <div class="section">
+	         <button class="button block">Long Button</button>
+	         <button class="btn block">Long Button</button>
+	     </div>
+	    <div class="section">
+	         <button class="button tiny">Tiny</button>
+	         <button class="button small">Small</button>
+	         <button class="button medium">Medium</button>
+	         <button class="button large">Large</button>
+	         <button class="button xlarge">X-Large</button>
+	     </div>
+      </div>
+   </div>
+
+
+
+
+
+
 
    <div class="container" id="grid">
       <div class="card soft">
@@ -199,6 +323,9 @@
          <h3>Dark Card</h3>
          <div class="card dark">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
 
+          <h3>Border Card</h3>
+         <div class="card border">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
          <h3>Soft Standard Card</h3>
          <div class="card soft">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
 
@@ -213,6 +340,68 @@
 
          <h3>Soft flat Card</h3>
          <div class="card flat soft">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+         <div class="card flat shadow">
+         	<header class="card header container">
+         		<h3>Card with Header & Footer</h3>
+         	</header>
+         	<div class="container">
+         		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</p></div>
+         	<footer class="card footer container">
+         		<h4>Footer</h4>
+         	</footer>
+         </div>
+
+         <div class="card flat shadow">
+         	<header class="card header container">
+         		<h3>Card with Header & Footer with Links</h3>
+         	</header>
+         	<div class="container">
+         	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</p></div>
+         	<footer class="card footer container">
+         		<a href="#">This is a Link</a>
+         		<a href="#">This is a Link</a>
+         	</footer>
+         </div>
+
+         <h3>Image Card - Half Screen</h3>
+         <div class="card flat shadow half">
+         	<img src="https://via.placeholder.com/300" alt="Image description">
+         	<div class="container">
+         		<p class="center">This is a description of this image</p>
+         	</div>
+         </div>
+
+         <h3>Shadow on Hover Card</h3>
+         <div class="card flat border third hover-shadow">
+         	<img src="https://via.placeholder.com/200" alt="Image description">
+         	<div class="container">
+         		<p class="center">This is a description of this image</p>
+         	</div>
+         </div>
+
+         <h3>Card with Heading, Image, Description, and Button</h3>
+         <div class="card soft third">
+         	<div class="container center">
+         		<h3>Heading</h3>
+         		<img src="https://via.placeholder.com/200" style="width:50%" alt="Image description">
+         		<h5>Description</h5>
+
+         		<button class="button">Button</button>
+         	</div>
+         </div>
+
+         <h3>Card with Image, Title on Image & Description</h3>
+         <div class="card flat shadow third">
+         	<div class="display-container">
+         		<img src="https://via.placeholder.com/300" alt="Image description">
+         		<div class="display-bottomleft">Photo Label</div>
+         	</div>
+         	<div class="container center">
+         		<h4>Image Description</h4>
+         	</div>
+         </div>
+
       </div>
    </div>
 

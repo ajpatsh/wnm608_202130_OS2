@@ -13,6 +13,9 @@
 	--color-black:#111;
 
 
+
+	--color-main-medium:#75c0c0;
+
 	--header-height:3rem; /* rem=root em is always relative to the root element (useful for paddings, borders, and margins, etc.); ems are always relative to the parent and can change (elements that are outside of the root elements) */
 
 
@@ -43,6 +46,8 @@ a {
 a:hover {
 	text-decoration:underline;
 }
+
+
 
 
 
@@ -107,6 +112,56 @@ a:hover {
 
 
 
+
+
+
+/* NAV */
+.crumbs ul,
+.nav ul,
+.navbar ul {
+   list-style-type:none;  /* gets rid of the bullet points */
+   margin:0;
+   padding-left:0;
+}
+
+
+.navbar a {
+	display:block; /* makes the a the full size of the nav bar, easier to click */
+	padding:0 0.5em;
+}
+
+.nav a {
+   display:block;
+   padding:0.2em 0.5em;
+}
+.nav a:hover {
+   background-color:var(--color-main-medium);
+   color:var(--color-white);
+   text-decoration:none;
+}
+
+   .crumbs ul,
+   .nav.flex ul,
+   .nav.stretch ul {
+      display:flex;
+   }
+
+   .nav.stretch li {
+      flex:1 1 auto;
+      text-align:center;
+   }
+
+
+   .crumbs li:not(:first-child)::before {
+      content:'Â»';
+      display:inline-block;
+      margin:0 0.5em;
+   }
+
+
+
+
+
 /* COMPONENT CLASSES -bigger chunks of CSS design */
 
 .navbar {
@@ -121,37 +176,13 @@ a:hover {
 	margin:0;
 }
 
-.nav ul,
-.navbar ul {
-	list-style-type:none; /* gets rid of the bullet points */
-	margin:0;
-	padding-left:0;
-}
 
-.navbar a {
-	display:block; /* makes the a the full size of the nav bar, easier to click */
-	padding:0 0.5em;
-}
 
-.nav a {
-	display:block; /* block elements take up full width of their parent elements */
-}
 
-.nav a hover {
-	background-color:var(--color-neutral-medium);
-	color:var(--color-white);
-	text-decoration: none;
-}
 
-.nav.flex ul,
-.nav.stretch ul {
-	display:flex;
-}
 
-.nav.stretch li {
-	flex:1 1 auto;
-	text-align:center;
-}
+
+
 
 
  /* VIEW WINDOW -useful for showing a big image on page with content in the middle */
@@ -389,6 +420,196 @@ a:hover {
 }
 
 
+
+
+/* TABLES */
+.table {
+   width:100%;
+   border-collapse:collapse;
+}
+.table td,
+.table th {
+   padding:0.5em 1em;
+   text-align:left;
+}
+
+.table.striped tbody tr:nth-child(odd) {
+   background-color:var(--color-neutral-light);
+}
+
+
+.table.lined.all tbody tr,
+.table.lined.horizontal tbody tr {
+   border-top: 1px solid var(--color-neutral-medium);
+}
+
+.table.lined.all td:not(:first-child),
+.table.lined.all th:not(:first-child),
+.table.lined.vertical td:not(:first-child),
+.table.lined.vertical th:not(:first-child) {
+   border-left: 1px solid var(--color-neutral-medium);
+}
+
+.table.lined.all,
+.table.lined.outline {
+   border: 1px solid var(--color-neutral-medium);
+}
+
+
+
+
+/* Horizontal Rule */
+hr {
+   border-width:0;
+   margin:1em 0;
+   border-bottom:1px dashed var(--color-neutral-medium);
+}
+
+
+
+
+
+
+
+/* FORMS */
+
+
+
+.form-control {
+   margin:1em 0;
+}
+
+.form-input {
+   display:inline-block;
+   width:100%;
+   border-width:0;
+   background-color:var(--color-neutral-lighter);
+   padding:0.5em 1em;
+   border-radius:0.3em;
+   font:inherit;
+   outline:0;
+   -webkit-appearance:none;
+}
+.form-button+.form-button,
+.form-input+.form-input {
+   margin-top:0.2em;
+}
+
+.form-input-lined {
+   display:inline-block;
+   width:100%;
+   padding:0.5em 1em;
+   font:inherit;
+   outline:0;
+   background-color:transparent;
+   border-radius:0;
+   border-width:0;
+   border-bottom:1px solid var(--color-neutral-medium);
+   -webkit-appearance:none;
+}
+.form-input-lined:focus {
+   border-bottom-color:var(--color-main-medium);
+}
+
+.form-label {
+    margin: 0.5em 0;
+    display: inline-block;
+    font-size: 0.8em;
+    color:var(--color-neutral-medium);
+}
+.form-button {
+   display:inline-block;
+   width:100%;
+   border-width:0;
+   background-color:var(--color-neutral-light);
+   padding:0.5em 1em;
+   border-radius:0.3em;
+   font:inherit;
+   outline:0;
+   text-align:center;
+   text-decoration:none;
+   cursor:pointer;
+   transition:all 0.3s;
+   -webkit-appearance:none;
+}
+.form-button:hover {
+   text-decoration:none;
+   box-shadow:0 0 10px var(--color-neutral-light);
+}
+.form-button:active {
+   background-color:var(--color-main-light);
+}
+
+.form-button.sell {
+   background-color:var(--color-sell-medium);
+   color:var(--color-white);
+}
+.form-button.sell:active {
+   background-color:var(--color-sell-dark);
+}
+
+
+.hotdog {
+   display:inline-flex;
+   width:100%;
+   border-width:0;
+   background-color:var(--color-neutral-light);
+   padding:0.5em 1em;
+   border-radius:2em;
+   font:inherit;
+   outline:0;
+   -webkit-appearance:none;
+}
+.hotdog input {
+   display:inline-block;
+   width:100%;
+   border-width:0;
+   font:inherit;
+   outline:0;
+   background-color:transparent;
+   -webkit-appearance:none;
+}
+
+
+
+
+.form-select {
+   position: relative;
+}
+.form-select>select {
+   display:inline-block;
+   width:100%;
+   border-width:0;
+   background-color:var(--color-neutral-light);
+   padding:0.5em 2em 0.5em 1em;
+   border-radius:0.3em;
+   font:inherit;
+   outline:0;
+   position:relative;
+   overflow:hidden;
+   -webkit-appearance:none;
+}
+.form-select::after {
+   position:absolute;
+   top:50%;
+   right:0.5em;
+   content:'â–¼';
+   font-family:arial;
+   font-size:0.9em;
+   color:var(--color-neutral-dark);
+   pointer-events:none;
+   transform: translateY(-50%);
+}
+
+
+
+
+/* ICON */
+.icon {
+   width:1em;
+   height:1em;
+   vertical-align: middle;
+}
 
 
 

@@ -1,16 +1,65 @@
 
 :root {
-	--color-neutral-light:#e9c288;
-	--color-neutral-medium:#f27b6e;
-	--color-neutral-dark:#56354c;
+	--color-neutral-light:#ededee;
+	--color-neutral-medium:#969599;
+	--color-neutral-dark:#424045; /* there are plugins you can get to help with colors in sublime text */
+
+	--color-white:#fff;
+	--color-black:#363940;
+
+	/* Primary Color Palette */
+
+	--color-red:#F07D70;
+	--color-orange:#ECA368;
+	--color-yellow:#DAD869;
+	--color-green:#ACD895;
+	--color-aqua:#75C0C0;
+	--color-blue:#57AAD2;
+
+	/*
+	--color-rygradient:linear-gradient(to right, rgba(218,216,105,1), rgba(236,163,104,1), rgba(240,125,112,1);
+	--color-bggradient:linear-gradient(to right, rgba(87,170,210,1), rgba(117,192,192,1), rgba(172,216,149,1);
+	--color-rainbowgradient:linear-gradient(to right, rgba(87,170,210,1), rgba(117,192,192,1), rgba(172,216,149,1), rgba(218,216,105,1), rgba(236,163,104,1), rgba(240,125,112,1);
+*/
+
+}
+
+@font-face {
+    font-family: "VisbyRoundCF-Bold";
+    src: url("fonts/VisbyRoundCF-Bold.woff") format('woff');
+}
+@font-face {
+    font-family: "VisbyRoundCF-Regular";
+    src: url("fonts/VisbyRoundCF-Regular.woff") format('woff');
 }
 
 .main {
 	padding: 2em;
 }
 
+.navlogo {
+	width:100px;
+	padding:1em;
+}
+
+.navbar {
+	background-color:transparent;
+}
+
 h1 {
-	color:var(--color-neutral-medium);
+	color:var(--color-aqua);
+	font-size:50px;
+	font-family:VisbyRoundCF-Bold;
+}
+
+p {
+	font-family:'Work Sans', sans-serif;
+	font-size:1em;
+	color:var(--color-black);
+}
+
+.view-window {
+	height:20vh; 
 }
 
 

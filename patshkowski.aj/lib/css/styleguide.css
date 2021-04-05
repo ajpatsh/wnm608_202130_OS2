@@ -13,13 +13,18 @@
 	--color-black:#111;
 
 
+	--color-store-blue:#57aad2;
+	--color-store-aqua:#75c0c0;
+	--color-store-green:#acd895;
+	--color-store-yellow:#dad869;
+	--color-store-orange:#eca368;
+	--color-store-red:#f07d70;
 
-	--color-main-medium:#75c0c0;
 
 	--header-height:3rem; /* rem=root em is always relative to the root element (useful for paddings, borders, and margins, etc.); ems are always relative to the parent and can change (elements that are outside of the root elements) */
 
 
-	--font-sans: Helvetica, Arial, sans-serif;
+	--font-sans: 'Work Sans', Arial, sans-serif;
 	--font-serif: Cambria, Georgia, "Times New Roman", serif; /* quotes are only necessary in font names that have spaces */
 }
 
@@ -35,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family:var(--font-serif);
+	font-family:'Visby Round CF';
 }
 
 a {
@@ -46,8 +51,6 @@ a {
 a:hover {
 	text-decoration:underline;
 }
-
-
 
 
 
@@ -135,7 +138,7 @@ a:hover {
    padding:0.2em 0.5em;
 }
 .nav a:hover {
-   background-color:var(--color-main-medium);
+   background-color:var(--color-store-green);
    color:var(--color-white);
    text-decoration:none;
 }
@@ -153,7 +156,7 @@ a:hover {
 
 
    .crumbs li:not(:first-child)::before {
-      content:'Â»';
+      content:'»';
       display:inline-block;
       margin:0 0.5em;
    }
@@ -221,7 +224,10 @@ a:hover {
 /* COLORS */
 
 
-
+.colorblock {
+	text-align:center;
+	padding:2em;
+}
 
 
 /* BORDERS */
@@ -254,7 +260,7 @@ a:hover {
 /* BUTTONS */
 
 
-.btn,.button {
+.btn,button {
 	border:none;
 	display:inline-block;
 	padding:8px 16px;
@@ -270,9 +276,9 @@ a:hover {
 
 .btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}  
 
-.button:hover{color:#000;background-color:#ccc}
+button:hover{color:#000;background-color:#ccc}
 
-.button.dark {
+button.dark {
 	background-color: var(--color-neutral-dark);
 	border:none;
 	color:white;
@@ -282,7 +288,7 @@ a:hover {
 	display:inline-block;
 }
 
-.button.medium {
+button.medium {
 	background-color: var(--color-neutral-medium);
 	border:none;
 	color:black;
@@ -292,7 +298,7 @@ a:hover {
 	display:inline-block;
 }
 
-.button.light {
+button.light {
 	background-color: var(--color-neutral-light);
 	border:none;
 	color:black;
@@ -302,7 +308,7 @@ a:hover {
 	display:inline-block;
 }
 
-.button.round {
+button.round {
 	border-radius: .5em;
 	background-color:var(--color-black);
 	color:var(--color-white);
@@ -373,7 +379,7 @@ a:hover {
 }
 
 .card.rainbow {
-	background-image: linear-gradient(130deg, #ff00a2, blue, #00ff99, #ebff00);
+	background-image: linear-gradient(130deg, #57aad2, #75c0c0, #acd895, #dad869, #eca368, #f07d70);
 }
 
 .card header {
@@ -624,8 +630,6 @@ hr {
 	max-width:100%;
 	vertical-align: middle;
 }
-
-
 
 
 

@@ -12,13 +12,8 @@
 	--color-white:#fff;
 	--color-black:#111;
 
-
-	--color-store-blue:#57aad2;
-	--color-store-aqua:#75c0c0;
-	--color-store-green:#acd895;
-	--color-store-yellow:#dad869;
-	--color-store-orange:#eca368;
-	--color-store-red:#f07d70;
+   --color-sell-medium: #5ecd61;
+   --color-sell-dark: #1e7820;
 
 
 	--header-height:3rem; /* rem=root em is always relative to the root element (useful for paddings, borders, and margins, etc.); ems are always relative to the parent and can change (elements that are outside of the root elements) */
@@ -138,7 +133,7 @@ a:hover {
    padding:0.2em 0.5em;
 }
 .nav a:hover {
-   background-color:var(--color-store-green);
+   background-color:var(--color-green);
    color:var(--color-white);
    text-decoration:none;
 }
@@ -260,7 +255,7 @@ a:hover {
 /* BUTTONS */
 
 
-.btn,button {
+button, .btn {
 	border:none;
 	display:inline-block;
 	padding:8px 16px;
@@ -310,8 +305,6 @@ button.light {
 
 button.round {
 	border-radius: .5em;
-	background-color:var(--color-black);
-	color:var(--color-white);
 	padding:.5em 1em;
 }
 
@@ -489,7 +482,7 @@ hr {
    display:inline-block;
    width:100%;
    border-width:0;
-   background-color:var(--color-neutral-lighter);
+   background-color:var(--color-neutral-light);
    padding:0.5em 1em;
    border-radius:0.3em;
    font:inherit;

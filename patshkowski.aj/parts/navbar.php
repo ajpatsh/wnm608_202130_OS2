@@ -1,14 +1,14 @@
 <header class="navbar">
 		<div class="container display-flex flex-align-center">
 			<div class="flex-none">
-				<h1>Store Website</h1>
+				<a href="http://ajpatshkowski.com/aau/wnm608/patshkowski.aj/"><img class="navlogo" src="img/Logo.png"></a>
 			</div>
 			<div class="flex-stretch"></div>
 			<nav class="flex-none nav nav flex">
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="product_list.php">Products</a></li>
-					<li><a href="#">Cart</a></li>
+					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</nav>
 		</div>

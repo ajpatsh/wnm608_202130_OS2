@@ -16,6 +16,8 @@
 	--color-aqua:#75C0C0;
 	--color-blue:#57AAD2;
 
+
+
 	/*
 	--color-rygradient:linear-gradient(to right, rgba(218,216,105,1), rgba(236,163,104,1), rgba(240,125,112,1);
 	--color-bggradient:linear-gradient(to right, rgba(87,170,210,1), rgba(117,192,192,1), rgba(172,216,149,1);
@@ -39,7 +41,7 @@
 
 .navlogo {
 	width:100px;
-	padding:1em;
+	margin:1em;
 }
 
 .navbar {
@@ -95,7 +97,7 @@ footer {
 }
 
 body {
-	background-color:var(--color-neutral-light);
+	background-color:var(--color-neutral-medium);
 }
 
 @media (max-width:500px) {
@@ -138,3 +140,95 @@ body {
    font-size:0.9em;
 }
 
+
+
+button.red {
+	background-color: var(--color-red);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+button.orange {
+	background-color: var(--color-orange);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+button.yellow {
+	background-color: var(--color-yellow);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+button.green {
+	background-color: var(--color-green);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+button.aqua {
+	background-color: var(--color-aqua);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+button.blue {
+	background-color: var(--color-blue);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+
+button.rainbow {
+	background-image: linear-gradient(130deg, #57aad2, #75c0c0, #acd895, #dad869, #eca368, #f07d70);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+button.reds {
+	background-image: linear-gradient(130deg, #dad869, #eca368, #f07d70);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+button.blues {
+	background-image: linear-gradient(130deg, #57aad2, #75c0c0, #acd895);
+	border:none;
+	color:var(--black);
+	padding: 8px 16px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}

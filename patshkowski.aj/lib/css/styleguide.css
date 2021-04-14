@@ -520,7 +520,7 @@ hr {
    display:inline-block;
    width:100%;
    border-width:0;
-   background-color:var(--color-neutral-light);
+   background-color:var(--color-neutral-medium);
    padding:0.5em 1em;
    border-radius:0.3em;
    font:inherit;

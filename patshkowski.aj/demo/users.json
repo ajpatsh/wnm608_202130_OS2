@@ -1,0 +1,36 @@
+[
+	
+	{
+		"name":"AJ Patshkowski",
+		"firstname":"AJ",
+		"lastname":"Patshkowski",
+		"type":"Student",
+		"email":"apatshko2@art.edu",
+		"classes":[605,608,613]
+	},
+	{
+		"name":"Vivienne Youn",
+		"firstname":"Vivienne",
+		"lastname":"Youn",
+		"type":"Student",
+		"email":"vivienneyounvv@gmail.com",
+		"classes":[622,606,608]
+	},
+	{
+		"name":"Yun Yao",
+		"firstname":"Yun",
+		"lastname":"Yao",
+        "type": "student",
+        "email": "yaoyun0831@gmail.com",
+        "classes":[608] 
+	},
+	{
+		"name":"Awesome Customer",
+		"firstname":"Awesome",
+		"lastname":"Customer",
+        "type": "Customer",
+        "email": "imacustomer@email.com",
+        "classes":[81523] 
+	}
+
+]

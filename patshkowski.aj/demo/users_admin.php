@@ -61,7 +61,7 @@ echo <<<HTML
 	<input id="example1" type="text" placeholder="$classes" class="form-input">
 </div>
 
-<input type="submit" class="form-button" value="Input Submit">
+<input type="submit" class="form-button" value="Submit">
 
 
 

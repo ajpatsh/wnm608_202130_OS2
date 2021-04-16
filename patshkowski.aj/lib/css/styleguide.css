@@ -115,6 +115,7 @@ a:hover {
 
 /* NAV */
 .crumbs ul,
+.pill ul,
 .nav ul,
 .navbar ul {
    list-style-type:none;  /* gets rid of the bullet points */
@@ -126,6 +127,11 @@ a:hover {
 .navbar a {
 	display:block; /* makes the a the full size of the nav bar, easier to click */
 	padding:0 0.5em;
+}
+
+.nav.pills a {
+   padding:0.5em 1em;
+   border-radius:2em;
 }
 
 .nav a {
@@ -623,7 +629,6 @@ hr {
 	max-width:100%;
 	vertical-align: middle;
 }
-
 
 
 

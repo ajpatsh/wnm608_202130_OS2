@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+
+include "lib/php/functions.php";
+include "parts/templates.php";
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	
@@ -15,6 +20,21 @@
 	<div class="container">
 		<div class="card soft">
 			<h2>Product List</h2>
+
+			<div class="grid gap product-list">
+			<?php
+
+         	$products = MYSQLIQuery("
+         		SELECT * 
+         		FROM `products`
+         		ORDER BY `date_create` DESC
+         		LIMIT 12
+         	");
+
+         	echo array_reduce($products,'makeProductList'); /*look up array reduce */
+
+         	?>
+         	</div>
 
 			<ul>
 				<!-- li*10>a[href='?id=$']>{Product $} -->

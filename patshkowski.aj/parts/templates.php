@@ -20,7 +20,7 @@ function makeCartList($r,$o) {
 return $r.<<<HTML
 <div class="display-flex">
    <div class="flex-none image-thumbs">
-      <img src="$o->image_thumb">
+      <img src="img/items/$o->image_thumb">
    </div>
    <div class="flex-stretch">
       <strong>$o->title</strong>

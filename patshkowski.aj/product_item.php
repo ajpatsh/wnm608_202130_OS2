@@ -11,7 +11,7 @@ $product = MYSQLIQuery("
 $thumbs = explode(",", $product->image_other);
 
 $thumb_elements = array_reduce($thumbs,function($r,$o){
-   return $r."<img src='img/items/$o'>";
+   return $r."<img src='/images/store/$o'>";
 });
 
 ?><!DOCTYPE html>
@@ -30,21 +30,22 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
          <div class="col-xs-12 col-md-7">
             <div class="card soft">
                <div class="image-main">
-                  <img src="img/items/<?= $product->image_main ?>" />
+                  <img src="/images/store/<?= $product->image_thumb ?>" />
                </div>
                <div class="image-thumbs"><?= $thumb_elements ?></div>
             </div>
          </div>
          <div class="col-xs-12 col-md-5">
-            <div class="card soft flat">
+            <form class="card soft flat" action="product_added_to_cart.php" method="post">
+               <input type="hidden" name="id" value="<?= $product->id ?>">
                <div class="card-section">
-                  <div class="product-title"><?= $product->name ?></div>
+                  <div class="product-title"><?= $product->title ?></div>
                   <div class="product-price">&dollar;<?= $product->price ?></div>
                </div>
                <div class="card-section">
                   <label class="form-label">Amount</label>
                   <div class="form-select">
-                     <select>
+                     <select name="amount">
                         <!-- option[value='$']*10>{$} -->
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -60,9 +61,9 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
                   </div>
                </div>
                <div class="card-section">
-                  <a href="product_added_to_cart.php" class="form-button sell">Add To Cart</a>
+                  <button type="submit" class="form-button sell">Add To Cart</button>
                </div>
-            </div>
+            </form>
             <div class="card soft">
                <?= $product->description ?>
             </div>

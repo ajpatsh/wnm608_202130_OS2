@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+
+
+
 function pretty_dump($data) {
    echo "<pre>",var_dump($data),"</pre>";
 }
@@ -49,6 +54,37 @@ function MYSQLIQuery($sql) {
    
    return $a;
 }
+
+
+
+// CART FUNCTIONS
+
+function getCart() {
+	return isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+}
+
+function setCart($a) {
+	$_SESSION['cart'] = $a;
+}
+
+
+function resetCart() { setCart([]); }
+
+
+function addToCart($id,$amount) {
+	$cart = getCart();
+
+	$p = (object) ["id"=>$id,"amount",$amount];
+
+	$cart[] = $p;
+
+	setCart($cart);
+}
+
+
+
+
+
 
 
 

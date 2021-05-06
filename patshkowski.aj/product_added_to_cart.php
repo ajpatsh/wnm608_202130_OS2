@@ -29,7 +29,7 @@ addToCart($_POST['id'],$_POST['$amount']);
             echo "You dun goofed";
          } else {
             ?>
-            <h2><?= $_POST['amount'] ?> <?= $product->title ?> Added To Your Cart</h2>
+            <h2><?= $_POST['amount'] ?> <?= $product->name ?> Added To Your Cart</h2>
 
             <div class="display-flex">
                <div class="flex-none"><a class="form-button" href="javascript:window.history.back();">Back To Product</a></div>

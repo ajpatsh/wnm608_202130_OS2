@@ -61,7 +61,11 @@ p {
 }
 
 .view-window {
-	height:20vh; 
+	height:30vh; 
+}
+
+.view-window.hero {
+	height:90vh;
 }
 
 
@@ -70,11 +74,11 @@ p {
 	font-weight:bold;
 }
 
-.card.features li {
+.card.featured li {
 	list-style-type:none;
 }
 
-.card.features ul {
+.card.featured ul {
 	align-items:center;
 	vertical-align: center;
 }
@@ -97,7 +101,7 @@ footer {
 }
 
 body {
-	background-color:var(--color-neutral-medium);
+	background-color:var(--color-yellow);
 }
 
 
@@ -255,7 +259,10 @@ button.blues {
 }
 
 
-
+h2.summer {
+	color:var(--color-yellow);
+	margin-right:10em;
+}
 
 /*[class*='col-']>.card {
 	height:100%;

@@ -198,7 +198,6 @@ a:hover {
 	background-size:cover;
 	background-position:center;
 	background-attachment:fixed; /* the view window itself doesn't have a background image in it */
-
 	height:70vh; /* vh=viewport height - a value of 1vh is equal to 1% of the viewport height; vw=viewport width; vmax=viewport maximum; vmin=viewport minimum */
 }
 
@@ -364,10 +363,10 @@ button.round {
 	padding:0;
 }
 
-.card.features {
+.card.featured {
 	background-color:var(--color-white);
 	box-shadow:3px 4px 10px 3px rgb(0, 0, 0, .08);
-	border-radius:0.5em;
+	border-radius:100em;
 	margin: 2em 1em 1em 1em;
 	width: 95%;
 	padding: 2em;

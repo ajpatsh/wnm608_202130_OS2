@@ -39,7 +39,7 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
             <form class="card soft flat" action="product_added_to_cart.php" method="post">
                <input type="hidden" name="id" value="<?= $product->id ?>">
                <div class="card-section">
-                  <div class="product-title"><?= $product->title ?></div>
+                  <div class="product-title"><?= $product->name ?></div>
                   <div class="product-price">&dollar;<?= $product->price ?></div>
                </div>
                <div class="card-section">

@@ -15,30 +15,20 @@ function file_get_json($filename) {
    return json_decode($data_string);
 }
 
-function file_put_json($filename) {
-	$data_string = file_put_contents($filename);
-	return json_encode($data_string);
-}
-
-
-
 
 /* DATABASE CONNECTION */
-
 function MYSQLIConn() {
-	include_once "data/auth.php";
+   include_once "data/auth.php";
 
-	$conn = new mysqli(...MYSQLIAuth()); /*look up spread operator*/
+   @$conn = new mysqli(...MYSQLIAuth()); /* ... is the SPREAD OPERATOR (takes an array and spreads it out into multiple individual values) - pass values back and forward from functions */
 
-	if($conn->connect_errno)
-		die($conn->connect_error);
+   if($conn->connect_errno)
+      die($conn->connect_error);
 
-	$conn->set_charset('utf8');
+   $conn->set_charset('utf8');
 
-	return $conn;
-
+   return $conn;
 }
-
 
 /* DATABASE CALL */
 function MYSQLIQuery($sql) {
@@ -48,45 +38,96 @@ function MYSQLIQuery($sql) {
 
    $result = $conn->query($sql);
 
+   if($conn->errno)
+      die($conn->error);
+
    while($row = $result->fetch_object()) {
       $a[] = $row;
    }
-   
+
    return $a;
 }
 
 
 
+
+
+
+
+
 // CART FUNCTIONS
+function array_find($array,$fn) {
+   foreach($array as $o) if($fn($o)) return $o;
+   return false;
+}
 
 function getCart() {
-	return isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+   return isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 }
 
 function setCart($a) {
-	$_SESSION['cart'] = $a;
+   $_SESSION['cart'] = $a;
 }
-
 
 function resetCart() { setCart([]); }
 
+function cartItemById($id) {
+   return array_find(getCart(),function($o)use($id){ return $o->id==$id; });
+}
 
 function addToCart($id,$amount) {
-	$cart = getCart();
+   $cart = getCart();
 
-	$p = (object) ["id"=>$id,"amount",$amount];
+   $p = cartItemById($id);
 
-	$cart[] = $p;
+   if($p) $p->amount = $amount;
+   else {
+      $cart[] = (object) [
+         "id"=>$id,
+         "amount"=>$amount
+      ];
+   }
 
-	setCart($cart);
+   setCart($cart);
+}
+
+
+function getCartItems() {
+   $cart = getCart();
+
+   if(!count($cart)) {
+      return [];
+   }
+
+   $ids = implode(",",array_map(function($o){return $o->id;},$cart));
+
+   $products = MYSQLIQuery("
+      SELECT *
+      FROM `products`
+      WHERE `id` IN ($ids)
+   ");
+
+   return array_map(function($db_product)use($cart) {
+      $cart_product = cartItemById($db_product->id);
+      $db_product->amount = $cart_product->amount;
+      $db_product->total = $cart_product->amount * $db_product->price;
+      return $db_product;
+   },$products);
+}
+
+
+
+function makeCartBadge() {
+   $cart = getCart();
+   return count($cart)==0 ? "" :
+      array_reduce($cart,function($r,$o){return $r+$o->amount;},0);
 }
 
 
 
 
-
-
-
-
+function setDefault($k,$v){
+   if(!isset($_GET[$k])) $_GET[$k] = $v;
+}
 
 

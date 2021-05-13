@@ -2,56 +2,55 @@
 
 include "lib/php/functions.php";
 include "parts/templates.php";
+include "data/api.php";
+
+// pretty_dump([$_GET,$_POST]);
+
+$_SESSION['num'] = isset($_SESSION['num']) ?
+	$_SESSION['num']+1 :
+	0;
+
+$search = isset($_GET['s']) ? $_GET['s'] : "";
 
 
+if(isset($_GET['t'])) {
+   $result = makeStatement($_GET['t']);
+   $products = isset($result['error']) ? [] : $result;
+} else {
+   $result = makeStatement("products_all");
+   $products = isset($result['error']) ? [] : $result;
+}
 
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<title>Product List</title>
-
-	<?php include "parts/meta.php" ?>
-
-	
+   <title>Product List</title>
+   
+   <?php include "parts/meta.php" ?>
 </head>
 <body>
-	
-	<?php include "parts/navbar.php" ?>
+   <?php include "parts/navbar.php" ?>
 
-	<div class="container">
-		<div class="card soft">
-			<h2>Product List</h2>
+   <div class="container">
 
-			<div class="grid gap product-list">
-			<?php
+      <form action="product_list.php" method="get" class="hotdog" style="margin-top:1em">
+         <input type="hidden" name="t" value="search">
+         <input type="search" name="s" placeholder="Search" value="<?= $search ?>">
+      </form>
 
-         	$products = MYSQLIQuery("
-         		SELECT * 
-         		FROM `products`
-         		ORDER BY `date_create` DESC
-         		LIMIT 12
-         	");
+      <h2>Product List</h2>
 
-         	echo array_reduce($products,'makeProductList'); /*look up array reduce */
+      <div class="grid gap product-list">
+      <?php
 
-         	?>
-         	</div>
+      if(empty($products)) {
+         echo "No products found.";
+      } else {
+         echo array_reduce($products,'makeProductList');
+      }
 
-			<ul>
-				<!-- li*10>a[href='?id=$']>{Product $} -->
-				<li><a href="product_item.php?id=1">Product 1</a></li>
-				<li><a href="product_item.php?id=2">Product 2</a></li>
-				<li><a href="product_item.php?id=3">Product 3</a></li>
-				<li><a href="product_item.php?id=4">Product 4</a></li>
-				<li><a href="product_item.php?id=5">Product 5</a></li>
-				<li><a href="product_item.php?id=6">Product 6</a></li>
-				<li><a href="product_item.php?id=7">Product 7</a></li>
-				<li><a href="product_item.php?id=8">Product 8</a></li>
-				<li><a href="product_item.php?id=9">Product 9</a></li>
-				<li><a href="product_item.php?id=10">Product 10</a></li>
-			</ul>
-		</div>
-	</div>
+      ?>
+      </div>
+   </div>
 </body>
 </html>

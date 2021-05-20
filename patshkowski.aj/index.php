@@ -89,7 +89,7 @@ include "lib/php/functions.php";
 	</div>
 </div>
 
-
+<?php include "parts/footer.php" ?>
 
 </body>
 </html>

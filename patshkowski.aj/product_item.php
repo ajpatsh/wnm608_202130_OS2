@@ -11,7 +11,7 @@ $product = MYSQLIQuery("
 $thumbs = explode(",", $product->image_other);
 
 $thumb_elements = array_reduce($thumbs,function($r,$o){
-   return $r."<img src='/images/store/$o'>";
+   return $r."<img src='images/store/$o'>";
 });
 
 
@@ -21,6 +21,9 @@ echo $_SESSION['num'];
 <html lang="en">
 <head>
    <title>Product List</title>
+
+   <script src="js/jquery-3.6.0.min.js"></script>
+   
    
    <?php include "parts/meta.php" ?>
 </head>
@@ -33,7 +36,7 @@ echo $_SESSION['num'];
          <div class="col-xs-12 col-md-7">
             <div class="card soft">
                <div class="image-main">
-                  <img src="/images/store/<?= $product->image_thumb ?>" />
+                  <img src="images/store/<?= $product->image_main ?>" />
                </div>
                <div class="image-thumbs"><?= $thumb_elements ?></div>
             </div>
@@ -44,6 +47,23 @@ echo $_SESSION['num'];
                <div class="card-section">
                   <div class="product-title"><?= $product->title ?></div>
                   <div class="product-price">&dollar;<?= $product->price ?></div>
+
+
+                  <div class="radio-colors">
+                     <input type="radio" name ="select-color" id="select-color-black" value="black">
+                     <label for="select-color-black"></label>
+                     <input type="radio" name ="select-color" id="select-color-pink" value="pink">
+                     <label for="select-color-pink"></label>
+                     <input type="radio" name ="select-color" id="select-color-purple" value="purple">
+                     <label for="select-color-purple"></label>
+                     <input type="radio" name ="select-color" id="select-color-teal" value="teal">
+                     <label for="select-color-teal"></label>
+                  </div>
+                  <div class="value"></div>
+
+
+
+
                </div>
                <div class="card-section">
                   <label class="form-label">Amount</label>
@@ -73,5 +93,22 @@ echo $_SESSION['num'];
          </div>
       </div>
    </div>
+
+
+
+
+
+<script src="js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

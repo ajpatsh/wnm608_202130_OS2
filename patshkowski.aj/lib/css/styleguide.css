@@ -194,7 +194,7 @@ a:hover {
 .view-window {
 	position:relative; /* allows to position absolutely the children inside of this 
 	overflow:hidden; /* allows to animate out of and into it's space, but not affect it's size */
-
+   width:100%;
 	background-size:cover;
 	background-position:center;
 	background-attachment:fixed; /* the view window itself doesn't have a background image in it */
@@ -594,25 +594,53 @@ hr {
    display:inline-block;
    width:100%;
    border-width:0;
-   background-color:var(--color-neutral-light);
+   background-color:var(--color-green);
    padding:0.5em 2em 0.5em 1em;
    border-radius:0.3em;
    font:inherit;
    outline:0;
    position:relative;
    overflow:hidden;
+   margin:.5em;
    -webkit-appearance:none;
 }
 .form-select::after {
    position:absolute;
    top:50%;
    right:0.5em;
-   content:'â–¼';
-   font-family:arial;
+   content:'\2228';
+   font-family:inherit;
    font-size:0.9em;
    color:var(--color-neutral-dark);
    pointer-events:none;
    transform: translateY(-50%);
+}
+
+
+.toggle label {
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    border-radius: 0.2em;
+    background-color: var(--color-neutral-lighter);
+    font-size: calc(2em + 2px);
+    position:relative;
+    overflow:hidden;
+}
+.toggle label::before {
+   content:'';
+   left:0;
+   top:0;
+   width:50%;
+   height:100%;
+   position:absolute;
+   border-radius: 0;
+   background-color:var(--color-neutral-light);
+   transition:all 0.3s;
+}
+.toggle input:checked+label::before {
+   left:1em;
+   background-color:var(--color-neutral-medium);
 }
 
 

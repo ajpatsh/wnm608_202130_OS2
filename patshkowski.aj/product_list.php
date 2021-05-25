@@ -6,11 +6,43 @@ include "data/api.php";
 
 // pretty_dump([$_GET,$_POST]);
 
-$_SESSION['num'] = isset($_SESSION['num']) ?
-	$_SESSION['num']+1 :
-	0;
+setDefault('s',''); // search
+setDefault('t','products_all'); // type
+setDefault('d','DESC'); // order direction
+setDefault('o','date_create'); // order by
+setDefault('l','12'); // limit
 
-$search = isset($_GET['s']) ? $_GET['s'] : "";
+// pretty_dump($_GET);
+
+
+function makeSortOptions() {
+   $options = [
+      ["date_create","DESC","Latest Products"],
+      ["date_create","ASC","Oldest Products"],
+      ["price","DESC","Price High to Low"],
+      ["price","ASC","Price Low to High"]
+   ];
+   foreach($options as [$orderby,$direction,$title]) {
+      echo "
+      <option data-orderby='$orderby' data-direction='$direction'
+      ".($_GET['o']==$orderby && $_GET['d']==$direction ? "selected" : "").">
+      $title</option>
+      ";
+   }
+}
+
+function makeFilterSet() {
+   $options = [
+      "Skates",
+      "Gear",
+      "Tools"
+   ];
+   foreach($options as $option) {
+      echo "
+      <a href='product_list.php?t=products_by_category&category=$option&d={$_GET['d']}&o={$_GET['o']}&l={$_GET['l']}&s={$_GET['s']}' class='filter-button inline ".($option==$_GET['category']?"active":"")."'>$option</a>
+      ";
+   }
+}
 
 
 if(isset($_GET['t'])) {
@@ -24,7 +56,12 @@ if(isset($_GET['t'])) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Product List</title>
+   <title>Products</title>
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+   <script src="js/jquery-3.6.0.min.js"></script>
    
    <?php include "parts/meta.php" ?>
 </head>
@@ -35,10 +72,32 @@ if(isset($_GET['t'])) {
 
       <form action="product_list.php" method="get" class="hotdog" style="margin-top:1em">
          <input type="hidden" name="t" value="search">
-         <input type="search" name="s" placeholder="Search" value="<?= $search ?>">
+         <input type="hidden" name="d" value="<?=$_GET['d']?>">
+         <input type="hidden" name="o" value="<?=$_GET['o']?>">
+         <input type="hidden" name="l" value="<?=$_GET['l']?>">
+         <input type="search" name="s" placeholder="Search" value="<?= $_GET['s'] ?>">
       </form>
 
-      <h2>Product List</h2>
+      <div class="display-flex flex-align-center">
+         <div class="display-inline-flex">
+            <? makeFilterSet() ?>
+         </div>
+         <div class="flex-stretch"></div>
+         <form action="product_list.php" method="get">
+            <input type="hidden" name="t" value="search">
+            <input type="hidden" name="s" value="<?=$_GET['s']?>">
+            <input type="hidden" name="d" value="<?=$_GET['d']?>">
+            <input type="hidden" name="o" value="<?=$_GET['o']?>">
+            <input type="hidden" name="l" value="<?=$_GET['l']?>">
+            <div class="form-select">
+               <select onChange="checkSort(this)">
+                  <? makeSortOptions() ?>
+               </select>
+            </div>
+         </form>
+      </div>
+
+      <h2>Products</h2>
 
       <div class="grid gap product-list">
       <?php
@@ -50,7 +109,12 @@ if(isset($_GET['t'])) {
       }
 
       ?>
+
+
       </div>
    </div>
+
+
+   <script src="lib/js/product.js"></script>
 </body>
 </html>

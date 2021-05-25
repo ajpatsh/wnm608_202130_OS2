@@ -14,6 +14,9 @@ addToCart($_POST['id']*1,$_POST['amount']*1);
 <html lang="en">
 <head>
    <title>Added To Cart</title>
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
    
    <?php include "parts/meta.php" ?>
 </head>

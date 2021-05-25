@@ -27,12 +27,12 @@
 }
 
 @font-face {
-    font-family: "VisbyRoundCF-Bold";
-    src: url("fonts/VisbyRoundCF-Bold.woff") format('woff');
+    font-family: 'VisbyRoundCF-Bold', 'Varela Round', sans-serif;
+    src: url('fonts/VisbyRoundCF-Bold.woff') format('woff');
 }
 @font-face {
-    font-family: "VisbyRoundCF-Regular";
-    src: url("fonts/VisbyRoundCF-Regular.woff") format('woff');
+    font-family: 'VisbyRoundCF-Regular', 'Varela Round', sans-serif;
+    src: url('fonts/VisbyRoundCF-Regular.woff') format('woff');
 }
 
 .main {
@@ -51,7 +51,7 @@
 h1 {
 	color:var(--color-aqua);
 	font-size:50px;
-	font-family:VisbyRoundCF-Bold;
+	font-family:VisbyRoundCF-Bold, sans-serif;
 }
 
 p {
@@ -396,4 +396,27 @@ img.social{
 	background-color:black;
 }
 
+
+.filter-button {
+   display:inline-block;
+   width:100%;
+   border:solid .05em var(--color-aqua);
+   background-color:transparent;
+   padding:0.05em .5em;
+   border-radius:0.3em;
+   font:inherit;
+   color:var(--color-aqua);
+   text-align:center;
+   text-decoration:none;
+   cursor:pointer;
+   transition:all 0.3s;
+   margin:.2em;
+   -webkit-appearance:none;
+}
+.filter-button:hover {
+   text-decoration:none;
+   box-shadow:0 0 5px var(--color-orange);
+}
+.filter-button:active {
+   background-color:var(--color-orange);
 

@@ -36,12 +36,12 @@
             <li><a href="styleguide/#typography">Typography</a></li>
             <li><a href="styleguide/#color">Color</a></li>
             <li><a href="styleguide/#borders">Borders</a></li>
-            <li><a href="styleguide/#buttons">Buttons</a></li>
             <li><a href="styleguide/#grid">Grid</a></li>
             <li><a href="styleguide/#card">Card</a></li>
             <li><a href="styleguide/#navigations">Navigations</a></li>
             <li><a href="styleguide/#tables">Tables</a></li>
             <li><a href="styleguide/#forms">Forms</a></li>
+            <li><a href="styleguide/#buttons">Buttons</a></li>
          </ul>
       </div>
    </div>
@@ -99,23 +99,23 @@
          <div style="background-color:var(--color-neutral-dark)">Color Neutral Dark</div>
 
          <div class="grid">
-            <div class="col-xs-12 col-md-2">
-               <div class="colorblock" style="background-color:var(--color-store-blue)">color-store-blue</div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+               <div class="colorblock" style="background-color:var(--color-blue)">color-store-blue</div>
             </div>
-            <div class="col-xs-12 col-md-2">
-               <div class="colorblock" style="background-color:var(--color-store-aqua)">color-store-aqua</div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+               <div class="colorblock" style="background-color:var(--color-aqua)">color-store-aqua</div>
             </div>
-            <div class="col-xs-12 col-md-2">
-               <div class="colorblock" style="background-color:var(--color-store-green)">color-store-green</div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+               <div class="colorblock" style="background-color:var(--color-green)">color-store-green</div>
             </div>
-            <div class="col-xs-12 col-md-2">
-               <div class="colorblock" style="background-color:var(--color-store-yellow)">color-store-yellow</div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+               <div class="colorblock" style="background-color:var(--color-yellow)">color-store-yellow</div>
             </div>
-            <div class="col-xs-12 col-md-2">
-               <div class="colorblock" style="background-color:var(--color-store-orange)">color-store-orange</div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+               <div class="colorblock" style="background-color:var(--color-orange)">color-store-orange</div>
             </div>
-            <div class="col-xs-12 col-md-2">
-               <div class="colorblock" style="background-color:var(--color-store-red)">color-store-red</div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+               <div class="colorblock" style="background-color:var(--color-red)">color-store-red</div>
             </div>
          </div>
 
@@ -194,48 +194,6 @@
          <div class="border circle">
          	<p>Straight up circle</p>
          </div>
-
-      </div>
-   </div>
-
-
-
-
-
-   <div class="container" id="buttons">
-      <div class="card soft">
-         <h2>Buttons</h2>
-         <div class="section">
-	         <button class="button light">Button</button>
-	         <button class="button dark">Dark Button</button>
-	         <button class="button medium">Medium Button</button>
-	         <button class="button light">Light Button</button>
-         </div>
-         <div class="section">
-	         <button class="btn">Hover Button</button>
-	         <button class="btn button dark">Hover Dk Button</button>
-	         <button class="btn button medium">Hover Md Button</button>
-	         <button class="btn button light">Hover Lt Button</button>
-	         <button class="btn button round">Hover Round Button</button>
-	     </div>
-	     <div class="section">
-	         <button class="btn round light">Round</button>
-	         <button class="btn round-large light">Rounder</button>
-	         <button class="btn round-xlarge light">Rounderer</button>
-	         <button class="btn round-xxlarge light">Rounderest</button>
-	         <button class="btn large circle xlarge light">+</button>
-	     </div>
-	     <div class="section">
-	         <button class="button block dark">Long Button</button>
-	         <button class="btn block medium">Long Button</button>
-	     </div>
-	    <div class="section">
-	         <button class="button tiny light">Tiny</button>
-	         <button class="button small light">Small</button>
-	         <button class="button medium light">Medium</button>
-	         <button class="button large light">Large</button>
-	         <button class="button xlarge light">X-Large</button>
-	     </div>
 
       </div>
    </div>
@@ -646,11 +604,44 @@ const makeTable = (classes='') => {
 
          <hr>
 
+
+      <div class="container" id="buttons">
          <h3>Buttons</h3>
          <input type="button" class="form-button" value="Input Button">
          <input type="submit" class="form-button" value="Input Submit">
          <button type="button" class="form-button">Button</button>
          <a href="#" class="form-button">Anchor</a>
+         <div class="section">
+            <button class="button light">Button</button>
+            <button class="button dark">Dark Button</button>
+            <button class="button medium">Medium Button</button>
+            <button class="button light">Light Button</button>
+         </div>
+         <div class="section">
+            <button class="btn">Hover Button</button>
+            <button class="btn button dark">Hover Dk Button</button>
+            <button class="btn button medium">Hover Md Button</button>
+            <button class="btn button light">Hover Lt Button</button>
+            <button class="btn button round">Hover Round Button</button>
+        </div>
+        <div class="section">
+            <button class="btn round light">Round</button>
+            <button class="btn round-large light">Rounder</button>
+            <button class="btn round-xlarge light">Rounderer</button>
+            <button class="btn round-xxlarge light">Rounderest</button>
+            <button class="btn large circle xlarge light">+</button>
+        </div>
+        <div class="section">
+            <button class="button block dark">Long Button</button>
+            <button class="btn block medium">Long Button</button>
+        </div>
+       <div class="section">
+            <button class="button tiny light">Tiny</button>
+            <button class="button small light">Small</button>
+            <button class="button medium light">Medium</button>
+            <button class="button large light">Large</button>
+            <button class="button xlarge light">X-Large</button>
+        </div>
 
          <h3>Other Buttons</h3>
          <button type="button" class="form-button sell">Button</button>
@@ -677,10 +668,10 @@ const makeTable = (classes='') => {
          <div class="display-flex">
             <div class="flex-stretch"></div>
             <div class="flex-none">
-               <button type="button" class="form-button sell">Button</button>
+               <button type="filter-button" class="filter-button">Filter 1</button>
             </div>
             <div class="flex-none" style="margin-left:0.2em">
-               <button type="button" class="form-button sell">Button</button>
+               <button type="filter-button" class="filter-button">Filter 2</button>
             </div>
          </div>
 
@@ -704,10 +695,31 @@ const makeTable = (classes='') => {
          </form>
 
 
-        
+<hr>
+
+         <h3>Form Select</h3>
+
+         <div class="form-select">
+            <select>
+               <option value="bird">bird</option>
+               <option value="dog">dog</option>
+               <option value="cat">cat</option>
+               <option value="horse">horse</option>
+            </select>
+         </div>
+
+
+         <h3>Custom Checkbox (checkbox trick)</h3>
+         <div class="toggle">
+            <input class="hidden" type="checkbox" id="product-on_sale" name="product-on_sale" value="1">
+            <label for="product-on_sale"></label>
+         </div>
+
 
       </div>
    </div>
+
+        
 
    <div class="container">
       <div class="card soft">

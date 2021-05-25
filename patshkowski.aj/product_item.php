@@ -1,12 +1,9 @@
 <?php
 
 include "lib/php/functions.php";
+include "data/api.php";
 
-$product = MYSQLIQuery("
-   SELECT *
-   FROM `products`
-   WHERE `id` = {$_GET['id']}
-")[0];
+$product = makeStatement("product_by_id")[0];
 
 $thumbs = explode(",", $product->image_other);
 
@@ -24,6 +21,8 @@ echo $_SESSION['num'];
 
    <script src="js/jquery-3.6.0.min.js"></script>
    
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
    
    <?php include "parts/meta.php" ?>
 </head>

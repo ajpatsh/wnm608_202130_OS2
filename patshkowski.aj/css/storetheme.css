@@ -263,6 +263,8 @@ button.rainbow {
 	text-align:center;
 	text-decoration:none;
 	display:inline-block;
+	font-weight:bold;
+	font-size:1em;
 }
 
 button.reds {
@@ -392,10 +394,6 @@ img.social{
 	border:solid 1px;
 }
 
-.radio-colors label, ^black{
-	background-color:black;
-}
-
 
 .filter-button {
    display:inline-block;
@@ -419,4 +417,37 @@ img.social{
 }
 .filter-button:active {
    background-color:var(--color-orange);
+}
+
+
+
+
+
+.form-button.cart {
+	background-color:var(--color-aqua);
+	width:100px;
+}
+
+
+
+.navbar a {
+	position:relative;
+}
+.navbar .badge {
+	position:absolute;
+	top:0;
+	right:-0.5em;
+	font-size:.7em;
+	padding:.5em;
+	border-radius:1em;
+	background-color:var(--color-orange);
+	color:white;
+	line-height:1;
+	pointer-events:none;
+}
+
+
+
+
+
 

@@ -31,6 +31,8 @@ function makeSortOptions() {
    }
 }
 
+
+
 function makeFilterSet() {
    $options = [
       "Skates",
@@ -68,8 +70,10 @@ if(isset($_GET['t'])) {
 <body>
    <?php include "parts/navbar.php" ?>
 
-   <div class="container">
 
+<div class="container">
+<div class="grid gap">
+   <div class="col-xs-12 col-md-9">
       <form action="product_list.php" method="get" class="hotdog" style="margin-top:1em">
          <input type="hidden" name="t" value="search">
          <input type="hidden" name="d" value="<?=$_GET['d']?>">
@@ -77,13 +81,10 @@ if(isset($_GET['t'])) {
          <input type="hidden" name="l" value="<?=$_GET['l']?>">
          <input type="search" name="s" placeholder="Search" value="<?= $_GET['s'] ?>">
       </form>
+   </div>
 
-      <div class="display-flex flex-align-center">
-         <div class="display-inline-flex">
-            <? makeFilterSet() ?>
-         </div>
-         <div class="flex-stretch"></div>
-         <form action="product_list.php" method="get">
+   <div class="col-xs-12 col-md-3">
+         <form action="product_list.php" method="get" style="margin-top:.5em">
             <input type="hidden" name="t" value="search">
             <input type="hidden" name="s" value="<?=$_GET['s']?>">
             <input type="hidden" name="d" value="<?=$_GET['d']?>">
@@ -95,8 +96,18 @@ if(isset($_GET['t'])) {
                </select>
             </div>
          </form>
-      </div>
+   </div>
+</div>
+<div class="display-flex flex-align-center">
+   <div class="display-inline-flex">
+      <? makeFilterSet() ?>
+   </div>
+</div>
+</div>
 
+
+
+<div class="container">
       <h2>Products</h2>
 
       <div class="grid gap product-list">
@@ -113,7 +124,7 @@ if(isset($_GET['t'])) {
 
       </div>
    </div>
-
+</div>
 
    <script src="lib/js/product.js"></script>
 </body>

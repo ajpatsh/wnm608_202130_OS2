@@ -29,14 +29,14 @@ include "lib/php/functions.php";
 
 <h1>Featured Skates</h1>
 
-<div class="grid">
+<div class="grid gap container">
 	<div class="col-xs-12 col-lg-4">
 		<div class="container">
 			<div class="card featured">
 				<div class="title"><h2>Bont Park Star</h2></div>
 				<div class="image"><img src="images/store/bontparkpink.png"></div>
 
-				<button class="btn round rainbow" a href="#">Learn More</a></button>
+				<a href="product_item.php?id=2" class="display-inline-flex"><button class="btn rainbow round">Learn More</button></a>
 			</div>
 		</div>
 	</div>
@@ -47,7 +47,7 @@ include "lib/php/functions.php";
 				<div class="title"><h2>Riedell Dart Ombré</h2></div>
 				<div class="image"><img src="images/store/dartgreen.png"></div>
 
-				<button class="btn round rainbow" a href="#">Learn More</a></button>
+				<a href="product_item.php?id=4" class="display-inline-flex"><button class="btn rainbow round">Learn More</button></a>
 			</div>
 		</div>
 	</div>
@@ -58,7 +58,7 @@ include "lib/php/functions.php";
 				<div class="title"><h2>Antik Jet Carbon</h2></div>
 				<div class="image"><img src="images/store/antikjet.png"></div>
 
-				<button class="btn round rainbow" a href="#">Learn More</a></button>
+				<a href="product_item.php?id=5" class="display-inline-flex"><button class="btn rainbow round">Learn More</button></a>
 			</div>
 		</div>
 	</div>
@@ -72,47 +72,51 @@ include "lib/php/functions.php";
 </div>
 
 
-<div class="grid">
-		<div class="container main display-flex flex-align-center">
-
-			<div class="col-xs-12 col-md-8 col-lg-8">
-				<img class="display-flex flex-align-center" src="images/store/dartpink.png">
-			</div>
+<div class="grid gap container">
+	
 			
-			<div class="col-xs-12 col-md-4 col-lg-4">
-			<div class="container">
-				<h1>Featured product name</h1>
+	<div class="col-xs-12 col-lg-4">
+		<div class="flex-justify-center">
+			<h1>Riedell Dart</h1>
 
-				<h4 class="display-inline-flex">Supporting text about how awesome this product is and how much it will solve all of your problems and make your life so much easier.</h4>
+			<h4 class="display-inline-flex">As one of our most popular skate sets, the Riedell Dart Ombré has been introducing a much-needed flash of vibrant color and style to rinks and recreational skating areas across the country.</h4>
 
-			<button class="btn rainbow round display-inline-flex">Call To Action</button>
-			</div>
+			<a href="product_item.php?id=4" class="display-inline-flex"><button class="btn rainbow round">See Specs</button></a>
 		</div>
-		</div>
+	</div>
+
+
+	<div class="col-xs-12 col-lg-8">
+		<img class="featured" src="images/store/dartpink.png">
 	</div>
 </div>
 
 
 
 
-<div class="grid">
-	<div class="col-xs-12 col-md-6 col-lg-2">
-		<div class="container display-flex flex-align-center">
 
-			<div class="container">
 
-				<h1>Featured product name</h1>
 
-				<h4 class="display-inline-flex">Supporting text about how awesome this product is and how much it will solve all of your problems and make your life so much easier.</h4>
-				<button class="btn rainbow round display-inline-flex">Call To Action</button>
+<div class="grid gap container">
+	
+	<div class="col-xs-12 col-lg-8">
+		<img class="featured" src="images/store/solaris.png">
+	</div>
 
-			</div>
 
-			<div class="container">
-				<img class="display-flex flex-align-center" src="images/store/solaris.png">
-			</div>
+
+	<div class="col-xs-12 col-lg-4">
+		<div class="flex-justify-center">
+
+			<h1>Riedell Solaris</h1>
+
+			<h4 class="display-inline-flex">If you’re searching for the best skating equipment on the market, look no further than the Solaris Pro. This skate is perfect for everything from recreational skating to roller derby.</h4>
+			<a href="product_item.php?id=3" class="display-inline-flex"><button class="btn rainbow round">See Specs</button></a>
 
 		</div>
+	</div>
+
+		
 	</div>
 </div>
 

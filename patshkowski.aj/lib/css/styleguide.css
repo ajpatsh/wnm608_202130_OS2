@@ -376,7 +376,6 @@ button.round {
 .card.featured {
 	background-color:var(--color-white);
 	box-shadow:3px 4px 10px 3px rgb(0, 0, 0, .08);
-	border-radius:100em;
 	margin: 2em 1em 1em 1em;
 	width: 95%;
 	padding: 2em;
@@ -595,8 +594,8 @@ hr {
    width:100%;
    border-width:0;
    background-color:var(--color-green);
-   padding:0.5em 2em 0.5em 1em;
-   border-radius:0.3em;
+   padding:0.5em 2em 0.5em 2em;
+   border-radius:1em;
    font:inherit;
    outline:0;
    position:relative;
@@ -608,7 +607,7 @@ hr {
    position:absolute;
    top:50%;
    right:0.5em;
-   content:'\2228';
+   content:'⬇';
    font-family:inherit;
    font-size:0.9em;
    color:var(--color-neutral-dark);
@@ -673,7 +672,11 @@ hr {
 
 
 
+/*Featured product section*/
 
+img.featured {
+   width:100%;
+}
 
 
 

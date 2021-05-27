@@ -18,7 +18,10 @@ function file_get_json($filename) {
 
 /* DATABASE CONNECTION */
 function MYSQLIConn() {
-   include_once "data/auth.php";
+   @include_once "data/auth.php";
+   if (!function_exists('MYSQLIAuth')) {
+      @include_once "..data/auth.php";
+   }
 
    @$conn = new mysqli(...MYSQLIAuth()); /* ... is the SPREAD OPERATOR (takes an array and spreads it out into multiple individual values) - pass values back and forward from functions */
 
@@ -75,7 +78,7 @@ function cartItemById($id) {
    return array_find(getCart(),function($o)use($id){ return $o->id==$id; });
 }
 
-function addToCart($id,$amount) {
+function addToCart($id,$amount,$skate_size) {
    $cart = getCart();
 
    $p = cartItemById($id);
@@ -85,6 +88,15 @@ function addToCart($id,$amount) {
       $cart[] = (object) [
          "id"=>$id,
          "amount"=>$amount
+      ];
+   }
+
+   if($p) $p->skate_size = $skate_size;
+   else {
+      $cart[] = (object) [
+         "id"=>$id,
+         "amount"=>$amount,
+         "skate_size"=>$skate_size
       ];
    }
 
@@ -119,7 +131,7 @@ function getCartItems() {
 
 function makeCartBadge() {
    $cart = getCart();
-   return count($cart)==0 ? "" :
+   return count($cart)==0 ? "" : 
       array_reduce($cart,function($r,$o){return $r+$o->amount;},0);
 }
 

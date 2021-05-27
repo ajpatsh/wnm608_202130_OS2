@@ -3,7 +3,7 @@
 function makeProductList($r,$o) {
 return $r.<<<HTML
 <div class="col-xs-12 col-sm-6 col-md-4">
-   <a href="product_item.php?id=$o->id" class="product">
+   <a href="product_item.php?id=$o->id" class="product rainbow card soft">
       <div class="product-image">
          <img src="images/store/$o->image_thumb" alt="">
       </div>
@@ -28,11 +28,22 @@ function selectAmount($amount=1,$total=10) {
 }
 
 
+function selectSkateSize($skate_size=3,$total=12) {
+   $output = "<select name='skate_size'>";
+   for($i=1;$i<$total;$i++) {
+      $output .= "<option ".($i==$skate_size?'selected':'').">$i</option>";
+   }
+   $output .= "</select>";
+   return $output;
+}
+
+
 
 
 function makeCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');
 $amountselect = selectAmount($o->amount,10);
+
 return $r.<<<HTML
 <div class="display-flex card-section">
    <div class="flex-none image-thumbs">
@@ -40,9 +51,11 @@ return $r.<<<HTML
    </div>
    <div class="flex-stretch">
       <strong>$o->title</strong>
+      <p>$o->color</p>
+      <p>$o->skate_size</p>
       <form action="product_actions.php?crud=delete-cart-item" method="post" style="font-size:0.8em">
          <input type="hidden" name="id" value="$o->id">
-         <input type="submit" value="delete" class="form-button inline">
+         <input type="submit" value="Remove" class="form-button.cart inline">
       </form>
    </div>
    <div class="flex-none">
@@ -57,6 +70,8 @@ return $r.<<<HTML
 </div>
 HTML;
 }
+
+
 
 function makeCondensedCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');

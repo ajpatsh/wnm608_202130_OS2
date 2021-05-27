@@ -110,17 +110,23 @@ function makeStatement($type) {
          $stmt = $conn->prepare("INSERT INTO `products`
             (
                `title`,
+               `color`,
+               `skate_size`,
+               `size`,
                `price`,
-               `category`,
+               `image_main`,
                `image_other`,
                `image_thumb`,
                `description`,
-               `quantity`,
+               `category`,
                `date_create`,
                `date_modify`
             )
             VALUES
             (
+               ?,
+               ?,
+               ?,
                ?,
                ?,
                ?,
@@ -134,12 +140,15 @@ function makeStatement($type) {
             ");
          $stmt->bind_param("sdssssi",
             $_POST['product-title'],
+            $_POST['product-color'],
+            $_POST['product-skate_size'],
+            $_POST['product-size'],
             $_POST['product-price'],
-            $_POST['product-category'],
+            $_POST['product-image_main'],
             $_POST['product-image_other'],
             $_POST['product-image_thumb'],
             $_POST['product-description'],
-            $_POST['product-quantity']
+            $_POST['product-category']
          );
          $stmt->execute();
          return $conn;

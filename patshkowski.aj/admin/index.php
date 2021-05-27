@@ -1,60 +1,44 @@
 <?php
 
 include "../lib/php/functions.php";
-
-$filename = "users.json";
-$users = file_get_json($filename);
+include "../data/api.php";
+include "../data/auth.php";
 
 // pretty_dump($_SERVER);
 // pretty_dump([$_GET,$_POST]);
+
+$products = makeStatement("products_admin_all");
+
+//pretty_dump($products);
 
 
 
 $empty_object = (object) [
    "title"=>"",
-   "price"=>"",
+   "color"=>"",
    "skate_size"=>"",
    "size"=>"",
-   "color"=>"",
+   "price"=>"",
    "image_main"=>"",
-   "image_thumb"=>"",
    "image_other"=>"",
+   "image_thumb"=>"",
    "description"=>"",
+   "category"=>"",
 ];
 
 
 
 switch(@$_GET['crud']) {
    case 'update':
-      $users[$_GET['id']]->name = $_POST['user-name'];
-      $users[$_GET['id']]->type = $_POST['user-type'];
-      $users[$_GET['id']]->email = $_POST['user-email'];
-      $users[$_GET['id']]->classes = explode(", ",$_POST['user-classes']);
-
-      file_put_contents($filename,json_encode($users));
-
+      makeStatement("product_update");
       header("location:{$_SERVER['PHP_SELF']}?id=".$_GET['id']);
       break;
    case 'create':
-      $empty_object->name = $_POST['user-name'];
-      $empty_object->type = $_POST['user-type'];
-      $empty_object->email = $_POST['user-email'];
-      $empty_object->classes = explode(", ",$_POST['user-classes']);
-
-      $id = count($users);
-
-      // array_push()
-      $users[] = $empty_object;
-
-      file_put_contents($filename,json_encode($users));
-
-      header("location:{$_SERVER['PHP_SELF']}?id=$id");
+      $result = makeStatement("product_insert");
+      header("location:{$_SERVER['PHP_SELF']}?id=".$result->insert_id);
       break;
    case 'delete':
-      array_splice($users,$_GET['id'],1);
-
-      file_put_contents($filename,json_encode($users));
-
+      makeStatement("product_delete");
       header("location:{$_SERVER['PHP_SELF']}");
       break;
 }
@@ -63,63 +47,138 @@ switch(@$_GET['crud']) {
 
 
 
-function showUserPage($user) {
+function productListItem($r,$product) {
+return $r.<<<HTML
+<div class="card-section">
+   <div class="display-flex">
+      <div class="flex-none image-thumbs">
+         <img src="images/store/$product->image_thumb">
+      </div>
+      <div class="flex-stretch">$product->title</div>  
+      <div class="flex-none">
+         <a href="{$_SERVER['PHP_SELF']}?id=$product->id" class="form-button">Edit</a>
+         <a href="product_item.php?id=$product->id" class="form-button">Visit</a>
+      </div>  
+   </div>
+</div>
+HTML;
+}
+
+
+function showProductPage($product) {
 
 $id = $_GET['id'];
-$classes = implode(", ", $user->classes);
+$thumbs = explode(",", $product->image_main);
+$thumb_elements = array_reduce($thumbs,function($r,$o){
+   return $r."<img src='/images/store/$o'>";
+});
 $addoredit = $id=="new" ? 'Add' : 'Edit';
 $createorupdate = $id=="new" ? 'create' : 'update';
+$showvisitlink = $id!="new" ? "<div><a href='product_item.php?id=$id' class='form-button'>Visit</a></div>" : "";
 
-
-// heredoc
 echo <<<HTML
 <div class="grid gap">
 <div class="col-xs-12">
 <div class="card soft">
 <nav class="nav pills display-flex">
-   <div class="flex-none"><a href="{$_SERVER['PHP_SELF']}"><img src="img/icon/arrow-left.svg" class="icon" style="font-size:1.5em"></a></div>
+   <div class="flex-none"><a href="{$_SERVER['PHP_SELF']}"><img src="images/arrow-left.svg" class="icon" style="font-size:1.5em"></a></div>
    <div class="flex-stretch"></div>
-   <div class="flex-none"><a href="{$_SERVER['PHP_SELF']}?id=$id&crud=delete"><img src="img/icon/trash.svg" class="icon" style="font-size:1.5em"></a></div>
+   <div class="flex-none"><a href="{$_SERVER['PHP_SELF']}?id=$id&crud=delete"><img src="images/trash.svg" class="icon" style="font-size:1.5em"></a></div>
 </nav>
 </div>
 </div>
 <div class="col-xs-12 col-md-4">
    <div class="card soft">
-      <h2>$user->name</h2>
+   
+      <h2>$product->title</h2>
       <div>
-         <strong>Type</strong>
-         <span>$user->type</span>
+         <strong>Price</strong>
+         <div>&dollar;$product->price</div>
       </div>
       <div>
-         <strong>Email</strong>
-         <span>$user->email</span>
+         <strong>Color</strong>
+         <div>$product->color</div>
       </div>
       <div>
-         <strong>Classes</strong>
-         <span>$classes</span>
+         <strong>Skate Size</strong>
+         <div>$product->skate_size</div>
       </div>
+      <div>
+         <strong>Size</strong>
+         <div>$product->size</div>
+      </div>
+      <div>
+         <strong>Image Main</strong>
+         <div class="image-thumbs">
+            <img src="images/store/$product->image_main">
+         </div>
+      </div>
+      <div>
+         <strong>Image Thumb</strong>
+         <div class="image-thumbs">
+            <img src="images/store/$product->image_thumb">
+         </div>
+      </div>
+      <div>
+         <strong>Image Other</strong>
+         <div class="image-thumbs">$thumb_elements</div>
+      </div>
+      <div>
+         <strong>Description</strong>
+         <div>$product->description</div>
+      </div>
+      <div>
+         <strong>Category</strong>
+         <div>$product->category</div>
+      </div>
+      $showvisitlink
    </div>
 </div>
 <form class="col-xs-12 col-md-8" method="post" action="{$_SERVER['PHP_SELF']}?id=$id&crud=$createorupdate">
    <div class="card soft">
-      <h2>$addoredit User</h2>
+      <h2>$addoredit Product</h2>
       <input type="hidden" name="id" value="$id">
       <div class="form-control">
-         <label class="form-label" for="user-name">Name</label>
-         <input class="form-input"type="text" id="user-name" name="user-name" value="$user->name">
+         <label class="form-label" for="product-title">Title</label>
+         <input class="form-input" type="text" id="product-title" name="product-title" value="$product->title">
       </div>
       <div class="form-control">
-         <label class="form-label" for="user-type">Type</label>
-         <input class="form-input"type="text" id="user-type" name="user-type" value="$user->type">
+         <label class="form-label" for="product-price">Price</label>
+         <input class="form-input" type="number" min="1" step=".01" id="product-price" name="product-price" value="$product->price">
       </div>
       <div class="form-control">
-         <label class="form-label" for="user-email">Email</label>
-         <input class="form-input"type="email" id="user-email" name="user-email" value="$user->email">
+         <label class="form-label" for="product-color">Color</label>
+         <input class="form-input" type="text" id="product-color" name="product-color" value="$product->color">
       </div>
       <div class="form-control">
-         <label class="form-label" for="user-classes">Classes</label>
-         <input class="form-input"type="text" id="user-classes" name="user-classes" value="$classes">
+         <label class="form-label" for="product-color">Skate Size</label>
+         <input class="form-input" type="text" id="product-skate_size" name="product-skate_size" value="$product->skate_size">
       </div>
+      <div class="form-control">
+         <label class="form-label" for="product-color">Size</label>
+         <input class="form-input" type="text" id="product-size" name="product-size" value="$product->size">
+      </div>
+      <div class="form-control">
+         <label class="form-label" for="product-image_thumb">Image Main</label>
+         <input class="form-input" type="text" id="product-image_main" name="product-image_main" value="$product->image_main">
+      </div>
+      <div class="form-control">
+         <label class="form-label" for="product-image_thumb">Image Thumb</label>
+         <input class="form-input" type="text" id="product-image_thumb" name="product-image_thumb" value="$product->image_thumb">
+      </div>
+      <div class="form-control">
+         <label class="form-label" for="product-image_other">Image Other</label>
+         <input class="form-input" type="text" id="product-image_other" name="product-image_other" value="$product->image_other">
+      </div>
+      <div class="form-control">
+         <label class="form-label" for="product-description">Description</label>
+         <textarea class="form-input" id="product-description" name="product-description">$product->description</textarea>
+      </div>
+      <div class="form-control">
+         <label class="form-label" for="product-category">Category</label>
+         <input class="form-input" type="text" id="product-category" name="product-category" value="$product->category">
+      </div>
+      
       <div class="form-control">
          <input class="form-button" type="submit" value="Submit">
       </div>
@@ -136,20 +195,20 @@ HTML;
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>User Administrator</title>
+   <title>Product Administrator</title>
    <?php include "../parts/meta.php" ?>
 </head>
 <body>
    <header class="navbar">
       <div class="container display-flex flex-align-center">
          <div class="flex-none">
-            <h1>User Admin</h1>
+            <h1>Product Admin</h1>
          </div>
          <div class="flex-stretch"></div>
          <nav class="flex-none nav flex">
             <ul>
                <li><a href="<?= $_SERVER['PHP_SELF'] ?>">List</a></li>
-               <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=new">Add New User</a></li>
+               <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=new">Add New Product</a></li>
             </ul>
          </nav>
       </div>
@@ -160,28 +219,21 @@ HTML;
          <?php
          if(isset($_GET['id'])) {
             // ternary, conditional
-            showUserPage(
+            showProductPage(
                $_GET['id']=="new" ?
                $empty_object :
-               $users[$_GET['id']]
+               getItemById($products,$_GET['id'])
             );
          } else {
          ?>
 
-      <div class="card soft">
-         <h2>User List</h2>
-
-         <ul>
+      <div class="card soft flat">
+         <div class="card-section"><h2>Product List</h2></div>
          <?php
 
-         for($i=0; $i<count($users); $i++) {
-            echo "<li>
-            <a href='{$_SERVER['PHP_SELF']}?id=$i'>{$users[$i]->name}</a>
-            </li>";
-         }
+         echo array_reduce($products,'productListItem');
 
          ?>
-         </ul>
       </div>
          <?php
          }

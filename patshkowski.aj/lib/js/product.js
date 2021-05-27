@@ -21,4 +21,5 @@ const checkSort = (el) => {
    form.d.value = d;
 
    form.submit();
+
 }

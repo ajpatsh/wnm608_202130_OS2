@@ -2,18 +2,18 @@
 
 include "lib/php/functions.php";
 
-pretty_dump($_POST);
+// pretty_dump($_POST);
 
 $product = MYSQLIQuery("SELECT * FROM `products` WHERE `id`=".$_POST['id'])[0];
 
-//pretty_dump($product);
+pretty_dump($product);
 
-addToCart($_POST['id']*1,$_POST['amount']*1);
+addToCart($_POST['id']*1,$_POST['amount']*1,$_POST['skate_size']);
 
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Added To Cart</title>
+   <title>Product Added To Cart</title>
 
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
@@ -29,13 +29,13 @@ addToCart($_POST['id']*1,$_POST['amount']*1);
          <?php
 
          if(!isset($_POST['id'])) {
-            echo "Go back and add product to cart";
+            echo "Please add product to cart";
          } else {
             ?>
             <h2><?= $_POST['amount'] ?> <?= $product->title ?> Added To Your Cart</h2>
 
             <div class="display-flex">
-               <div class="flex-none"><a class="form-button" href="javascript:window.history.back();">Back To Product</a></div>
+               <div class="flex-none"><a class="form-button" href="product_cart.php">View Cart</a></div>
                <div class="flex-stretch"></div>
                <div class="flex-none"><a class="form-button" href="product_list.php">Continue Shopping</a></div>
             </div>

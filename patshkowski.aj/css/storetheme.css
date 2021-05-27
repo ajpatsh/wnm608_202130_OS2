@@ -300,51 +300,32 @@ h2.summer {
 
 
 footer{
-	position:fixed;
+	position:relative;
 	bottom:0;
 }
 
-@media (max-height:800px){
-	footer { position: static; }
-}
+
 
 .responsive-footer{
 	background-color:var(--color-aqua);
 	box-sizing:border-box;
 	width:100%;
-	text-align:left;
+	text-align:center;
 	padding:50px 50px 60px 50px;
 	margin-top:80px;
 }
 
-.responsive-footer.footer-left,
-.responsive-footer.footer-center,
-.responsive-footer.footer-right{
-	display:inline-block;
-	vertical-align:top;
-}
-
-.responsive-footer.footer-left{
-	width:30%;
-}
-
-.responsive-footer.footer-left img{
-	width:30%;
-}
 
 .responsive-footer.footer-links a{
 	display:inline-block;
 	line-height:1.8;
 	text-decoration:none;
 	color:inherit;
+	font:inherit;
 }
 
 .responsive-footer.copyright{
 	margin:0;
-}
-
-.responsive-footer.footer-center{
-	width:35%;
 }
 
 .responsive-footer.footer-social{
@@ -378,10 +359,6 @@ img.social{
 		width: 100%;
 		margin-bottom: 40px;
 		text-align: center;
-	}
-
-	.responsive-footer.footer-center i{
-		margin-left: 0;
 	}
 
 }

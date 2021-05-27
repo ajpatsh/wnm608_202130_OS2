@@ -122,7 +122,7 @@ echo $_SESSION['num'];
 
 
 
-
+<?php include "parts/footer.php" ?>
 
 
 </body>

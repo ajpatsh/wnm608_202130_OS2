@@ -6,7 +6,7 @@ include "lib/php/functions.php";
 
 $product = MYSQLIQuery("SELECT * FROM `products` WHERE `id`=".$_POST['id'])[0];
 
-pretty_dump($product);
+// pretty_dump($product);
 
 addToCart($_POST['id']*1,$_POST['amount']*1,$_POST['skate_size']);
 
@@ -44,5 +44,8 @@ addToCart($_POST['id']*1,$_POST['amount']*1,$_POST['skate_size']);
          ?>
       </div>
    </div>
+
+
+   <?php include "parts/footer.php" ?>
 </body>
 </html>

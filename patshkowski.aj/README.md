@@ -6,7 +6,7 @@
 
 ### Important Links
 
-- http://ajpatshkowski.com
+- http://ajpatshkowski.com/aau/wnm608/patshkowski.aj/admin/index.php
 - http://ajpatshkowski.com/aau/wnm608/patshkowski.aj/styleguide
 
 ### Recipes Page

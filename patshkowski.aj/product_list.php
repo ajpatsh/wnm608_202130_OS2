@@ -127,5 +127,7 @@ if(isset($_GET['t'])) {
 </div>
 
    <script src="lib/js/product.js"></script>
+
+   <?php include "parts/footer.php" ?>
 </body>
 </html>

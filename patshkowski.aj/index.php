@@ -24,9 +24,10 @@ include "lib/php/functions.php";
 	<?php include "parts/navbar.php" ?>
 
 <div class="view-window hero display-flex flex-align-center flex-justify-center" style="background-image:url(images/skateshero.jpg)">
-			<h2 class="card soft dark"><a href="http://ajpatshkowski.com/aau/wnm608/patshkowski.aj/product_list.php">PRODUCT</a></h2>
+			<h2 class="card soft dark"><a href="http://ajpatshkowski.com/aau/wnm608/patshkowski.aj/product_list.php">Welcome to our little skate shop!</a></h2>
 </div>
 
+<div class="container">
 <h1>Featured Skates</h1>
 
 <div class="grid gap container">
@@ -62,6 +63,7 @@ include "lib/php/functions.php";
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 
 <div class="view-window display-flex flex-align-center flex-justify-center" style="background-image:url(images/outdoorskate.jpg)">

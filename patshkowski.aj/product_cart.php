@@ -3,7 +3,7 @@
 include "lib/php/functions.php";
 include "parts/templates.php";
 
-// resetCart();
+resetCart();
 pretty_dump(getCart());
 
 $cart = getCartItems();
@@ -52,5 +52,8 @@ $cart = getCartItems();
          </div>
       </div>
    </div>
+
+
+   <?php include "parts/footer.php" ?>
 </body>
 </html>

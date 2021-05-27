@@ -82,23 +82,29 @@ function makeStatement($type) {
          $stmt = $conn->prepare("UPDATE `products`
             SET
                `title` = ?,
+               `color` = ?,
+               `skate_size` = ?,
+               `size` = ?,
                `price` = ?,
-               `category` = ?,
+               `image_main` = ?,
                `image_other` = ?,
                `image_thumb` = ?,
                `description` = ?,
-               `quantity` = ?,
+               `category` = ?,
                `date_modify` = NOW()
             WHERE `id` = ?
             ");
          $stmt->bind_param("sdssssii",
             $_POST['product-title'],
+            $_POST['product-color'],
+            $_POST['product-skate_size'],
+            $_POST['product-size'],
             $_POST['product-price'],
-            $_POST['product-category'],
+            $_POST['product-image_main'],
             $_POST['product-image_other'],
             $_POST['product-image_thumb'],
             $_POST['product-description'],
-            $_POST['product-quantity'],
+            $_POST['product-category'],
             $_POST['id']
          );
          $stmt->execute();

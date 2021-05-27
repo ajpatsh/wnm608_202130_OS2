@@ -170,7 +170,7 @@ a:hover {
 
 .navbar {
 	background-color:var(--color-neutral-dark);
-	color:var(--color-white);
+	color:var(--color-neutral-dark);
 	line-height:var(--header-height);
 }
 
@@ -404,7 +404,7 @@ button.round {
 }
 
 .card img {
-	width:100%;
+   width:100%;
 }
 
 .card.third {
@@ -614,6 +614,37 @@ hr {
    pointer-events:none;
    transform: translateY(-50%);
 }
+
+
+.form-select-credit {
+   position: relative;
+}
+.form-select-credit>select {
+   display:inline-block;
+   width:100%;
+   border-width:0;
+   background-color:var(--color-neutral-light);
+   padding:0.5em 2em 0.5em 2em;
+   border-radius:.3em;
+   font:inherit;
+   outline:0;
+   position:relative;
+   overflow:hidden;
+   margin:.5em;
+   -webkit-appearance:none;
+}
+.form-select-credit::after {
+   position:absolute;
+   top:65%;
+   right:0.5em;
+   content:'⬇';
+   font-family:inherit;
+   font-size:0.9em;
+   color:var(--color-neutral-dark);
+   pointer-events:none;
+   transform: translateY(-50%);
+}
+
 
 
 .toggle label {

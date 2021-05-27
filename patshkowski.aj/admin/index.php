@@ -66,7 +66,7 @@ HTML;
 
 
 function showProductPage($product) {
-
+// pretty_dump($product);
 $id = $_GET['id'];
 $thumbs = explode(",", $product->image_main);
 $thumb_elements = array_reduce($thumbs,function($r,$o){
@@ -151,15 +151,15 @@ echo <<<HTML
          <input class="form-input" type="text" id="product-color" name="product-color" value="$product->color">
       </div>
       <div class="form-control">
-         <label class="form-label" for="product-color">Skate Size</label>
+         <label class="form-label" for="product-skate_size">Skate Size</label>
          <input class="form-input" type="text" id="product-skate_size" name="product-skate_size" value="$product->skate_size">
       </div>
       <div class="form-control">
-         <label class="form-label" for="product-color">Size</label>
+         <label class="form-label" for="product-size">Size</label>
          <input class="form-input" type="text" id="product-size" name="product-size" value="$product->size">
       </div>
       <div class="form-control">
-         <label class="form-label" for="product-image_thumb">Image Main</label>
+         <label class="form-label" for="product-image_main">Image Main</label>
          <input class="form-input" type="text" id="product-image_main" name="product-image_main" value="$product->image_main">
       </div>
       <div class="form-control">

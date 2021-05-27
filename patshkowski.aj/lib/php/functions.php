@@ -59,6 +59,11 @@ function MYSQLIQuery($sql) {
 
 
 // CART FUNCTIONS
+
+function getItemById($a,$id) {
+   return array_find($a,function($o)use($id){ return $o->id==$id; });
+}
+
 function array_find($array,$fn) {
    foreach($array as $o) if($fn($o)) return $o;
    return false;
@@ -75,7 +80,7 @@ function setCart($a) {
 function resetCart() { setCart([]); }
 
 function cartItemById($id) {
-   return array_find(getCart(),function($o)use($id){ return $o->id==$id; });
+   return getItemById(getCart(),$id);
 }
 
 function addToCart($id,$amount,$skate_size) {

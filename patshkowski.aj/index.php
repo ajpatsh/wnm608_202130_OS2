@@ -27,17 +27,20 @@ include "lib/php/functions.php";
 			<h2 class="card soft dark"><a href="http://ajpatshkowski.com/aau/wnm608/patshkowski.aj/product_list.php">Welcome to our little skate shop!</a></h2>
 </div>
 
+
 <div class="container">
+
+
 <h1>Featured Skates</h1>
 
 <div class="grid gap container">
 	<div class="col-xs-12 col-lg-4">
 		<div class="container">
 			<div class="card featured">
-				<div class="title"><h2>Bont Park Star</h2></div>
-				<div class="image"><img src="images/store/bontparkpink.png"></div>
+				<div class="title"><h2>Emerald Moon Boots</h2></div>
+				<div class="image"><img src="images/store/emeraldmoon.jpg"></div>
 
-				<a href="product_item.php?id=2" class="display-inline-flex"><button class="btn rainbow round">Learn More</button></a>
+				<a href="product_item.php?id=11" class="display-inline-flex"><button class="btn rainbow round">Learn More</button></a>
 			</div>
 		</div>
 	</div>

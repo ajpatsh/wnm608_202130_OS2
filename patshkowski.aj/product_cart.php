@@ -3,8 +3,8 @@
 include "lib/php/functions.php";
 include "parts/templates.php";
 
-resetCart();
-pretty_dump(getCart());
+// resetCart();
+// pretty_dump(getCart());
 
 $cart = getCartItems();
 

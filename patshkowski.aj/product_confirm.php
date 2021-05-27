@@ -20,7 +20,7 @@ include "lib/php/functions.php";
 
 	<div class="container">
 		<div class="card soft">
-			<h2>Thanks for your purchase!</h2>
+			<h2>Thanks for supporting your local skate shop!</h2>
 
 
 			<div><a href="product_list.php">Try out these things</a></div>

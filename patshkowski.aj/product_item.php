@@ -99,7 +99,7 @@ echo $_SESSION['num'];
                   </div>
                </div>
                <div class="card-section">
-                  <button type="submit" class="form-button sell">Add To Cart</button>
+                  <button type="submit" class="form-button rainbow">Add To Cart</button>
                </div>
             </form>
             <div class="card soft">

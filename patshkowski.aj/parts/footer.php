@@ -4,8 +4,8 @@
 		<img class="navlogo" src="images/Logo.png">
 			<p class="footer-links">
 				<a href="index.php">Home</a>
-				<a href="product_list">Products</a>
-				<a href="product_cart">Cart</a>
+				<a href="product_list.php">Products</a>
+				<a href="product_cart.php">Cart</a>
 				<a href="admin/index.php">Admin</a>
 			</p>
 

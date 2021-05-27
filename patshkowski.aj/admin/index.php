@@ -14,16 +14,16 @@ $products = makeStatement("products_admin_all");
 
 
 $empty_object = (object) [
-   "title"=>"",
-   "color"=>"",
+   "title"=>"Moxi Vice Versa Skate Key",
+   "color"=>"red,teal",
    "skate_size"=>"",
    "size"=>"",
-   "price"=>"",
-   "image_main"=>"",
-   "image_other"=>"",
+   "price"=>"5.00",
+   "image_main"=>"moxikey.jpg",
+   "image_other"=>"moxikey_m.jpg",
    "image_thumb"=>"",
-   "description"=>"",
-   "category"=>"",
+   "description"=>"The Original Vice Versa Universal Skate Tool was designed for quick tightening on the go! Named after Long Beach Roller Derby's Vice Versa, this cute compact tool tightens the axle nuts on your wheels and fits conveniently on you key ring. Awesome for street skating, outdoor skating, or any skating adventure.",
+   "category"=>"Tools",
 ];
 
 

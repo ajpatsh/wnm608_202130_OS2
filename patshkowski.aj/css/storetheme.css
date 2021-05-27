@@ -60,6 +60,7 @@ p {
 	color:var(--color-black);
 }
 
+
 .view-window {
 	height:30vh; 
 }
@@ -424,7 +425,9 @@ img.social{
 }
 
 
-
+span.badge:empty {
+	display:none;
+}
 
 
 
